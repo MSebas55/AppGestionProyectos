@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS proyectos_usuarios_proyectos;
 CREATE TABLE proyectos (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) UNIQUE,
-    descripción VARCHAR(150),
+    descripcion VARCHAR(150),
     estado VARCHAR(15),
     fechaini date,
     fechafin date
@@ -21,7 +21,7 @@ CREATE TABLE proyectos (
 CREATE TABLE tareas (
     id INTEGER PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(70),
-    descripción VARCHAR(200),
+    descripcion VARCHAR(200),
     estado VARCHAR(15),
     fechaini date,
     fechafin date,
@@ -34,7 +34,7 @@ CREATE TABLE usuarios (
     nombre VARCHAR(30),
     apellido VARCHAR(30),
     email VARCHAR(35),
-    contraseña VARCHAR(30)
+    contra VARCHAR(30)
 );
 
 CREATE TABLE proyectos_usuarios_tareas (
