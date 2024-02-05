@@ -137,3 +137,17 @@ VALUES
 (55, 'Desarrollo de Herramientas Educativas', 'Implementar herramientas educativas basadas en la investigación', 'Pendiente', '2023/09/16', '2023/10/30', 20),
 (56, 'Pruebas en Entornos Educativos', 'Realizar pruebas en entornos educativos reales para evaluar la efectividad', 'Pendiente', '2023/11/01', '2023/11/20', 20);
 
+INSERT INTO usuarios (id, nombre, apellido, email, contraseña) VALUES
+(1, 'Juan', 'Gómez', 'juan@gmail.com', 'contraseña123'),
+(2, 'María', 'López', 'maria@gmail.com', 'contraseña456'),
+(3, 'Carlos', 'Martínez', 'carlos@gmail.com', 'contraseña789'),
+(4, 'Elena', 'Rodríguez', 'elena@gmail.com', 'contraseña012'),
+(5, 'Pedro', 'García', 'pedro@gmail.com', 'contraseña345');
+
+INSERT INTO proyectos_usuarios_tareas (idUsuario, idProyecto, idTarea) VALUES
+(1, 1, 1),
+(2, 2, 5),
+(3, 3, 9),
+(4, 4, 13),
+(5, 5, 16);
+select * from proyectos_usuarios_tareas;
