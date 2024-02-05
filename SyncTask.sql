@@ -150,4 +150,3 @@ INSERT INTO proyectos_usuarios_tareas (idUsuario, idProyecto, idTarea) VALUES
 (3, 3, 9),
 (4, 4, 13),
 (5, 5, 16);
-select * from proyectos_usuarios_tareas;
