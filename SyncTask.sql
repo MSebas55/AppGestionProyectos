@@ -56,7 +56,7 @@ CREATE TABLE proyectos_usuarios_tareas (
     	ON DELETE CASCADE
 );
 
-insert into proyectos (id, nombre, descripción, estado, fechaini, fechafin) values 
+insert into proyectos (id, nombre, descripcion, estado, fechaini, fechafin) values 
 (1, 'Optimización de Procesos Empresariales', 'Proyecto de desarrollo de software para optimizar procesos empresariales', 'En progreso', '2023/08/03', '2024/08/04'),
 (2, 'Sistema de Gestión de Inventario', 'Diseño e implementación de un sistema de gestión de inventario', 'En progreso', '2023/08/03', '2024/08/04'),
 (3, 'Desarrollo de Nuevas Tecnologías', 'Investigación y desarrollo de nuevas tecnologías para la automatización de tareas', 'En progreso', '2023/08/03', '2024/08/04'),
@@ -78,7 +78,7 @@ insert into proyectos (id, nombre, descripción, estado, fechaini, fechafin) val
 (19, 'Plataforma de Streaming Cultural', 'Creación de una plataforma de streaming para promover eventos culturales y artísticos', 'Acabado', '2023/01/15', '2023/07/20'),
 (20, 'Innovación en Tecnologías de la Educación', 'Investigación y desarrollo de tecnologías innovadoras para mejorar la educación', 'En progreso', '2023/08/03', '2024/08/04');
 
-insert into tareas (id, nombre, descripción, estado, fechaini, fechafin, proyecto_id) 
+insert into tareas (id, nombre, descripcion, estado, fechaini, fechafin, proyecto_id) 
 VALUES
 (1, 'Desarrollo del Módulo de Autenticación', 'Implementar el módulo de autenticación para el sistema', 'En progreso', '2023/08/03', '2023/10/15', 1),
 (2, 'Diseño de Interfaz de Usuario', 'Crear la interfaz de usuario intuitiva y atractiva', 'En progreso', '2023/08/16', '2023/09/30', 1),
@@ -137,7 +137,7 @@ VALUES
 (55, 'Desarrollo de Herramientas Educativas', 'Implementar herramientas educativas basadas en la investigación', 'Pendiente', '2023/09/16', '2023/10/30', 20),
 (56, 'Pruebas en Entornos Educativos', 'Realizar pruebas en entornos educativos reales para evaluar la efectividad', 'Pendiente', '2023/11/01', '2023/11/20', 20);
 
-INSERT INTO usuarios (id, nombre, apellido, email, contraseña) VALUES
+INSERT INTO usuarios (id, nombre, apellido, email, contra) VALUES
 (1, 'Juan', 'Gómez', 'juan@gmail.com', 'contraseña123'),
 (2, 'María', 'López', 'maria@gmail.com', 'contraseña456'),
 (3, 'Carlos', 'Martínez', 'carlos@gmail.com', 'contraseña789'),
@@ -150,3 +150,4 @@ INSERT INTO proyectos_usuarios_tareas (idUsuario, idProyecto, idTarea) VALUES
 (3, 3, 9),
 (4, 4, 13),
 (5, 5, 16);
+select * from usuarios;
