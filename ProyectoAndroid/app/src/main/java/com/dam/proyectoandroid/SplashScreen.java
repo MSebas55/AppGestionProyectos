@@ -23,10 +23,6 @@ public class SplashScreen extends AppCompatActivity {
         openLogin();
 
         ImageView logoSplash = findViewById(R.id.logoSplash);
-        TextView appNameSplash = findViewById(R.id.appNameSplash);
-
-        Animation fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
-        appNameSplash.startAnimation(fadeAnimation);
 
         Animation shakeAnimation = AnimationUtils.loadAnimation(this, R.anim.sequential);
         logoSplash.startAnimation(shakeAnimation);

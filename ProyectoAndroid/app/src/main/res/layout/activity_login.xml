@@ -11,32 +11,20 @@
         android:id="@+id/gradientRegister"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradientperfil"
+        android:background="@drawable/fondo"
         />
 
-    <ImageView
-        android:id="@+id/logoLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:src="@drawable/icono_login"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp"
-        />
     <TextView
         android:id="@+id/appNameLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/classicaldiary"
         android:text="@string/app_name"
         android:textColor="@color/morado_oscuro"
-        app:layout_constraintTop_toBottomOf="@id/logoLogin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="30dp"
-        android:fontFamily="@font/classicaldiary"
         android:textSize="40sp"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="230dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/usernameInputLogin"
@@ -100,6 +88,7 @@
         app:layout_constraintEnd_toEndOf="@id/loginGLV2"
         android:layout_marginTop="10dp"
         android:text="Iniciar Sesión"
+        
         android:onClick="changeToInicio"
         />
 
