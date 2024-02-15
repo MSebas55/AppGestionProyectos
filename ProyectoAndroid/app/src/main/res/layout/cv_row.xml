@@ -39,7 +39,6 @@
             android:text="Proyecto"
             android:textColor="@color/verde_principal"
             android:gravity="center"/>
-
         <View
             android:id="@+id/divider"
             android:layout_width="match_parent"
