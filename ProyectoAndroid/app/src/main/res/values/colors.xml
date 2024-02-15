@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="verde_principal">#7DCA6A</color>
+    <color name="verde_oscuro">#0F3800</color>
     <color name="morado_oscuro">#572364</color>
     <color name="moradito">#e0e0e0e0</color>
     <color name="seed">#95aa61</color>

@@ -79,14 +79,8 @@ public class HomeFragment extends Fragment {
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Lógica que se ejecutará cuando se haga clic en el botón
-                onMyButtonClick();
             }
         });
         return view;
-    }
-    public void onMyButtonClick() {
-        Intent nIntent = new Intent(getActivity(), SearchActivity.class);
-        startActivity(nIntent);
     }
 }

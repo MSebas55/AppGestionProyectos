@@ -1,11 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.SyncTask" parent="Theme.Material3.Light.NoActionBar">
-        <item name="colorPrimary">@color/morado_oscuro</item>
+        <item name="colorPrimary">@color/verde_oscuro</item>
         <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
         <item name="colorPrimaryContainer">@color/moradito</item>
         <item name="colorOnPrimaryContainer">@color/md_theme_light_onPrimaryContainer</item>
-        <item name="colorSecondary">@color/morado_oscuro</item>
+        <item name="colorSecondary">@color/verde_principal</item>
         <item name="colorOnSecondary">@color/md_theme_light_onSecondary</item>
         <item name="colorSecondaryContainer">@color/moradito</item>
         <item name="colorOnSecondaryContainer">@color/md_theme_light_onSecondaryContainer</item>
@@ -17,7 +17,7 @@
         <item name="colorErrorContainer">@color/md_theme_light_errorContainer</item>
         <item name="colorOnError">@color/md_theme_light_onError</item>
         <item name="colorOnErrorContainer">@color/md_theme_light_onErrorContainer</item>
-        <item name="android:colorBackground">@color/morado_oscuro</item>
+        <item name="android:colorBackground">@color/verde_oscuro</item>
         <item name="colorOnBackground">@color/md_theme_light_onBackground</item>
         <item name="colorSurface">@color/moradito</item>
         <item name="colorOnSurface">@color/md_theme_light_onSurface</item>

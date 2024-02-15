@@ -24,7 +24,7 @@ public class SplashScreen extends AppCompatActivity {
 
         ImageView logoSplash = findViewById(R.id.logoSplash);
 
-        Animation shakeAnimation = AnimationUtils.loadAnimation(this, R.anim.sequential);
+        Animation shakeAnimation = AnimationUtils.loadAnimation(this, R.anim.zoom);
         logoSplash.startAnimation(shakeAnimation);
     }
 
