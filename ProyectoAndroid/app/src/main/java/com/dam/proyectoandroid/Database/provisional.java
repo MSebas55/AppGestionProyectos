@@ -7,6 +7,7 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.dam.proyectoandroid.Database.Interfaces.CRUDInterface;
+import com.dam.proyectoandroid.Database.adapters.ProyectsAdapter;
 import com.dam.proyectoandroid.Database.model.Proyecto;
 import com.dam.proyectoandroid.R;
 
@@ -45,6 +46,8 @@ public class provisional extends AppCompatActivity {
                     return;
                 }
                 proyectos = response.body();
+                ProyectsAdapter proyectsAdapter = new ProyectsAdapter(proyectos,getApplicationContext());
+                listView.setAdapter(proyectsAdapter);
                 proyectos.forEach(p -> Log.i("Proyectos: ",p.toString()));
             }
 

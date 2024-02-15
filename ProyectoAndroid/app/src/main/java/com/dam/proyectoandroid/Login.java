@@ -12,11 +12,13 @@ package com.dam.proyectoandroid;
         import android.view.View;
         import android.widget.Button;
         import android.widget.EditText;
+        import android.widget.ListView;
         import android.widget.TextView;
         import android.widget.Toast;
 
         import com.dam.proyectoandroid.Database.Constants;
         import com.dam.proyectoandroid.Database.Interfaces.CRUDInterface;
+        import com.dam.proyectoandroid.Database.adapters.ProyectsAdapter;
         import com.dam.proyectoandroid.Database.model.Proyecto;
 
         import java.util.List;
@@ -33,6 +35,7 @@ public class Login extends AppCompatActivity {
     private Button buttonLogin;
     List<Proyecto> proyectos;
     CRUDInterface crudInterface;
+    ListView listView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +82,8 @@ public class Login extends AppCompatActivity {
                     return;
                 }
                 proyectos = response.body();
-                Toast.makeText(Login.this, proyectos.get(0).getNombre(), Toast.LENGTH_SHORT).show();
+                ProyectsAdapter proyectsAdapter = new ProyectsAdapter(proyectos,getApplicationContext());
+                listView.setAdapter(proyectsAdapter);
                 proyectos.forEach(p -> Log.i("Proyectos: ",p.toString()));
             }
 
