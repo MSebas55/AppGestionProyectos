@@ -1,9 +1,14 @@
 package com.dam.proyectoandroid;
 
+import android.content.Intent;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import android.widget.Button;
+
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +19,7 @@ import com.dam.proyectoandroid.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
 
 public class HomeFragment extends Fragment {
 

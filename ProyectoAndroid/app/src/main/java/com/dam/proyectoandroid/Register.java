@@ -1,13 +1,11 @@
 package com.dam.proyectoandroid;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -31,6 +29,7 @@ public class Register extends AppCompatActivity {
         titulo.startAnimation(zoomAnimation);
 
     }
+
     public void signUpNewUser(View v){
         Intent nIntent = new Intent(Register.this, Login.class);
         startActivity(nIntent);
