@@ -1,0 +1,20 @@
+<resources>
+    <style name="MyCalendarDateTextAppearance">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="MyCalendarDayOfWeekTextAppearance">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="MyCalendarMonthTextAppearance">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="MyCalendarYearTextAppearance">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="MyCalendarTextAppearance">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>
