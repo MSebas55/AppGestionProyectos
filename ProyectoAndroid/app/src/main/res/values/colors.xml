@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="rojo">#FF0000</color> <!-- Color rojo -->
+    <color name="verde">#00FF00</color> <!-- Color verde -->
+    <color name="azul">#0000FF</color> <!-- Color azul -->
     <color name="verde_principal">#7DCA6A</color>
     <color name="verde_oscuro">#0F3800</color>
     <color name="morado_oscuro">#572364</color>

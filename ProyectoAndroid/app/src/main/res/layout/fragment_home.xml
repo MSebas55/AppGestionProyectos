@@ -1,92 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    android:layout_height="match_parent">
 
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <!-- Contenedor en la parte superior con la palabra "synctask" -->
+    <LinearLayout
+        android:id="@+id/syncTaskContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@color/verde_principal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Synctask"
+            android:textColor="@android:color/white"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Texto "Mis Proyectos" a la izquierda -->
+    <TextView
+        android:id="@+id/textViewAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mis Proyectos"
+        android:textSize="24sp"
+        android:textColor="#FF000000"
+        android:textStyle="bold"
+        android:gravity="start"
+        android:padding="16dp"
+        android:layout_below="@id/syncTaskContainer"
+        android:layout_alignParentStart="true" />
+
+    <!-- RecyclerView debajo del texto "Mis Proyectos" -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/historicEventsRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#e0e0e0">
+        android:layout_below="@id/textViewAppName"
+        android:layout_marginTop="8dp"
+        />
 
-        <!-- Imagen representativa o banner -->
-        <ImageView
-            android:id="@+id/imageViewBanner"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/icono_login"/>
-
-        <!-- Encabezado con el nombre de la aplicación -->
-        <TextView
-            android:id="@+id/textViewAppName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SpotSpain"
-            android:textSize="24sp"
-            android:textColor="#FFFFFFFF"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:padding="16dp"/>
-
-        <!-- Botones de acción -->
-        <LinearLayout
-            android:id="@+id/linearLayoutButtons"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:layout_below="@+id/imageViewBanner">
-
-            <Button
-                android:id="@+id/buttonBuscarFiesta"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Buscar Proyecto"
-                android:backgroundTint="@color/verde_principal"
-                android:textStyle="bold"
-                android:layout_marginEnd="8dp"/>
-        </LinearLayout>
-        <TextView
-            android:id="@+id/textodisco"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/linearLayoutButtons"
-            android:textColor="@color/verde_oscuro"
-            android:text="Mis proyectos: "
-            android:textSize="24dp">
-        </TextView>
-        <!-- Lista de eventos próximos -->
-        <LinearLayout
-            android:id="@+id/imagesLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textodisco"
-            android:orientation="horizontal"/>
-        <LinearLayout
-            android:id="@+id/imagesLayout1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imagesLayout"
-            android:orientation="horizontal"/>
-        <LinearLayout
-            android:id="@+id/imagesLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imagesLayout1"
-            android:orientation="horizontal"/>
-        <LinearLayout
-            android:id="@+id/imagesLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imagesLayout2"
-            android:orientation="horizontal"/>
-
-    </RelativeLayout>
-
-
-
-</FrameLayout>
+</RelativeLayout>

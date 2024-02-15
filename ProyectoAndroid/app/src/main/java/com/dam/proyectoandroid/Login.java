@@ -17,10 +17,6 @@ package com.dam.proyectoandroid;
         import android.widget.TextView;
         import android.widget.Toast;
 
-        import com.dam.proyectoandroid.Database.DatabaseAux;
-        import com.dam.proyectoandroid.Database.DatabaseAux;
-        import com.dam.proyectoandroid.Database.User;
-
         import org.w3c.dom.Text;
 
         import java.util.HashMap;
@@ -67,37 +63,5 @@ public class Login extends AppCompatActivity {
     public void changeToInicio(View view) {
         Intent intent = new Intent(Login.this, Inicio.class);
         startActivity(intent);
-    }
-    public void checkUser(View v) {
-        EditText nameEditText = findViewById(R.id.inputuser);
-        EditText passEditText = findViewById(R.id.inputpassword);
-
-        String nameString = nameEditText.getText().toString();
-        String passString = passEditText.getText().toString();
-
-        DatabaseAux aux = new DatabaseAux(Login.this);
-        SQLiteDatabase db = aux.getReadableDatabase();
-
-        if (db != null) {
-            String[] columns = {"name"};
-            String selection = "name = ? AND pass = ?";
-            String[] selectionArgs = {nameString, passString};
-
-            Cursor cursor = db.query("users", columns, selection, selectionArgs, null, null, null);
-
-            if (cursor != null) {
-                if (cursor.getCount() > 0) {
-                    Toast.makeText(this, "Iniciando sesión", Toast.LENGTH_LONG).show();
-                    nameEditText.setText("");
-                    passEditText.setText("");
-                    Intent nIntent = new Intent(Login.this,Inicio.class);
-                    startActivity(nIntent);
-                } else {
-                    Toast.makeText(this, "usuario o la contraseña estan mal introducidos.", Toast.LENGTH_LONG).show();
-                }
-                cursor.close();
-            }
-            db.close();
-        }
     }
 }

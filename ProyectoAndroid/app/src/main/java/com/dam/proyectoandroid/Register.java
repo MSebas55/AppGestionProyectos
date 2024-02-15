@@ -14,9 +14,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.dam.proyectoandroid.Database.DatabaseAux;
-import com.dam.proyectoandroid.Database.User;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,36 +32,6 @@ public class Register extends AppCompatActivity {
 
     }
     public void signUpNewUser(View v){
-        TextView nameTextView = findViewById(R.id.usuarioreg);
-        TextView emailTextView = findViewById(R.id.mailreg);
-        TextView passTextView = findViewById(R.id.passreg);
-
-        String nameString = nameTextView.getText().toString();
-        String emailString = emailTextView.getText().toString();
-        String passString = passTextView.getText().toString();
-
-        DatabaseAux aux = new DatabaseAux(Register.this);
-        SQLiteDatabase db = aux.getWritableDatabase();
-
-       if(db != null && !nameString.isEmpty() && !emailString.isEmpty() && !passString.isEmpty()) {
-            ContentValues values = new ContentValues();
-            values.put("name", nameString);
-            values.put("email", emailString);
-            values.put("pass", passString);
-
-            long res = db.insert("users", null, values);
-            System.out.println(res);
-            if(res >= 0) {
-                Toast.makeText(this, "Insertado correctamente", Toast.LENGTH_LONG).show();
-                nameTextView.setText("");
-                emailTextView.setText("");
-                passTextView.setText("");
-            }
-            else {
-                Toast.makeText(this, "Fallo al insertar", Toast.LENGTH_LONG).show();
-            }
-            db.close();
-        }
         Intent nIntent = new Intent(Register.this, Login.class);
         startActivity(nIntent);
     }
