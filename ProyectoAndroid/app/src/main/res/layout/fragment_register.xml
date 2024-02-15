@@ -1,16 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterFragment">
+    android:orientation="vertical"
+    tools:context=".LoginFragment"
+    android:gravity="center">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="REGISTER"
-        android:textSize="24sp"
-        android:gravity="center" />
+        android:id="@+id/textousuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuario:"
+        android:textColor="@color/verde_guay"
+        android:textSize="18sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"/>
 
-</FrameLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/userInputLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@color/verde_guay"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/inputuser"
+            android:layout_width="match_parent"
+            android:background="@color/verde_guay"
+            android:layout_height="wrap_content"
+            android:hint="Usuario"
+            android:drawableStart="@drawable/ic_baseline_person_24"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Correo electrónico -->
+    <TextView
+        android:id="@+id/textocorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correo electrónico:"
+        android:textSize="18sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/verde_guay">
+    </TextView>
+
+    <!-- TextInputLayout para el correo electrónico -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailInputLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@color/verde_guay"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/inputemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/verde_guay"
+            android:hint="Correo electrónico"
+            android:inputType="textEmailAddress"
+            android:drawableStart="@drawable/ic_correo"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Contraseña -->
+    <TextView
+        android:id="@+id/textocontraseña"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contraseña:"
+        android:textColor="@color/verde_guay"
+        android:textSize="18sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <!-- TextInputLayout para la contraseña -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordInputLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@color/verde_guay"
+        android:layout_marginEnd="10dp">
+
+        <EditText
+            android:id="@+id/inputpassword"
+            android:layout_width="match_parent"
+            android:background="@color/verde_guay"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:drawableStart="@drawable/ic_llave"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

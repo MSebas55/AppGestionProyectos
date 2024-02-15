@@ -42,12 +42,11 @@ public class HomeFragment extends Fragment {
 
         // Convertir las matrices en ArrayList
         ArrayList<String> eventNames = new ArrayList<>(Arrays.asList(eventNamesArray));
-        ArrayList<String> eventDates = new ArrayList<>(Arrays.asList(eventDatesArray));
         ArrayList<String> eventLocations = new ArrayList<>(Arrays.asList(eventLocationsArray));
         ArrayList<String> textColors = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.text_colors)));
 
         // Crear y configurar el adaptador del RecyclerView
-        HistoricEventRVAdapter adapter = new HistoricEventRVAdapter(requireContext(), eventNames, eventDates, eventLocations, textColors);
+        HistoricEventRVAdapter adapter = new HistoricEventRVAdapter(requireContext(), eventNames, eventLocations, textColors);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
