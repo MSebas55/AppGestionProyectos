@@ -15,14 +15,12 @@ import java.util.ArrayList;
 public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRVAdapter.MyViewHolder> {
     private Context context;
     private ArrayList<String> eventNames;
-    private ArrayList<String> eventDates;
     private ArrayList<String> eventLocations;
     private ArrayList<String> textColors;
 
-    public HistoricEventRVAdapter(Context context, ArrayList<String> eventNames, ArrayList<String> eventDates, ArrayList<String> eventLocations, ArrayList<String> textColors) {
+    public HistoricEventRVAdapter(Context context, ArrayList<String> eventNames,ArrayList<String> eventLocations, ArrayList<String> textColors) {
         this.context = context;
         this.eventNames = eventNames;
-        this.eventDates = eventDates;
         this.eventLocations = eventLocations;
         this.textColors = textColors;
     }
@@ -37,7 +35,6 @@ public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRV
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.tvEventName.setText(eventNames.get(position));
-        holder.tvEventDate.setText(eventDates.get(position));
         holder.tvEventLocation.setText(eventLocations.get(position));
 
         // Obtener el color de texto para la posición actual
@@ -50,7 +47,6 @@ public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRV
 
             // Establecer el color de texto para cada TextView
             holder.tvEventName.setTextColor(color);
-            holder.tvEventDate.setTextColor(color);
             holder.tvEventLocation.setTextColor(color);
         }
     }
@@ -62,12 +58,11 @@ public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRV
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView tvEventName, tvEventDate, tvEventLocation;
+        TextView tvEventName, tvEventLocation;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             tvEventName = itemView.findViewById(R.id.tvEventName);
-            tvEventDate = itemView.findViewById(R.id.tvEventDate);
             tvEventLocation = itemView.findViewById(R.id.tvEventLocation);
         }
     }
