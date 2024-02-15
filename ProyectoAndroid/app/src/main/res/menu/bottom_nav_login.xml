@@ -1,11 +1,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Iniciar sesión"
-        android:icon="@drawable/ic_baseline_home_24"
-        android:id="@+id/home"
-        android:iconTint="@color/moradito"/>
-    <item android:title="Registrarse"
-        android:icon="@drawable/ic_baseline_search_24"
-        android:id="@+id/search"
-        android:iconTint="@color/moradito"/>
+    <item
+        android:id="@+id/login"
+        android:title="TODO" />
+    <item
+        android:id="@+id/register"
+        android:title="TODO" />
 </menu>

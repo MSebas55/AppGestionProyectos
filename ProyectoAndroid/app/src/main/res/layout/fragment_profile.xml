@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradientperfil"
+    android:background="@drawable/icono_login"
     tools:context=".ProfileFragment">
 
     <RelativeLayout
@@ -33,6 +33,7 @@
             android:layout_below="@+id/imageViewProfile"
             android:padding="16dp"
             android:text="Juanito"
+            android:textColor="#FFFF"
             android:gravity="center"
             android:textSize="30sp"
             android:textStyle="bold"/>

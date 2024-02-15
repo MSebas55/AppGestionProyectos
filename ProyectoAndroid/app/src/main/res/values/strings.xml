@@ -1,23 +1,155 @@
 <resources>
+
     <string name="app_name">SyncTask</string>
-    <string name="watermark">SyncTask by S.C. and A.E.</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string-array name="Provincia">
-        <item>Madrid</item>
-        <item>Barcelona</item>
-        <item>Murcia</item>
-        <item>Valencia</item>
+    <string name="watermark">Made by S.C. y A.E.</string>
+    <string name="hello_blank_fragment">Hola</string>
+
+    <string-array name="historic_event_names">
+
+        <item>Fundación mítica de Roma</item>
+
+        <item>Inicio de la Guerra del Peloponeso</item>
+
+        <item>Caída del imperio romano</item>
+
+        <item>Primer ataque vikingo</item>
+
+        <item>Coronación de Carlomagno</item>
+
+        <item>Batalla de las Navas de Tolosa</item>
+
+        <item>Toma de Constantinopla</item>
+
+        <item>Conquista de Granada</item>
+
+        <item>Llegada de los europeos a América</item>
+
+        <item>Inicio de la Guerra de los 30 años</item>
+
+        <item>Fin de la dinastía Ming</item>
+
+        <item>Paz de Westfalia</item>
+
+        <item>Independencia de las 13 colonias</item>
+
+        <item>Revolución francesa</item>
+
+        <item>Congreso de Viena</item>
+
+        <item>Comuna de París</item>
+
+        <item>Revolución bolchevique</item>
+
+        <item>Fin de la I Guerra Mundial</item>
+
+        <item>Fin de la II Guerra Mundial</item>
+
     </string-array>
-    <string-array name="Municipio">
-        <item>Madrid</item>
-        <item>Torrejón de Ardoz</item>
-        <item>Alcalá de Henares</item>
-        <item>Arganda del Rey</item>
+
+    <string-array name="historic_event_dates">
+
+        <item>753 a.C.</item>
+
+        <item>431 a.C.</item>
+
+        <item>476</item>
+
+        <item>789</item>
+
+        <item>800</item>
+
+        <item>1212</item>
+
+        <item>1453</item>
+
+        <item>1492</item>
+
+        <item>1492</item>
+
+        <item>1618</item>
+
+        <item>1644</item>
+
+        <item>1648</item>
+
+        <item>1776</item>
+
+        <item>1789</item>
+
+        <item>1815</item>
+
+        <item>1871</item>
+
+        <item>1917</item>
+
+        <item>1918</item>
+
+        <item>1945</item>
+
     </string-array>
-    <string-array name="Interes">
-        <item>Restaurantes</item>
-        <item>Iglesias</item>
-        <item>Museos</item>
-        <item>Discotecas / Pubs</item>
+
+    <string-array name="historic_event_locations">
+
+        <item>Roma</item>
+
+        <item>Grecia</item>
+
+        <item>Italia</item>
+
+        <item>Islas británicas</item>
+
+        <item>Aquisgrán</item>
+
+        <item>Navas de Tolosa</item>
+
+        <item>Constantinopla</item>
+
+        <item>Granada</item>
+
+        <item>América</item>
+
+        <item>Europa</item>
+
+        <item>China</item>
+
+        <item>Europa</item>
+
+        <item>América</item>
+
+        <item>Francia</item>
+
+        <item>Austria</item>
+
+        <item>París</item>
+
+        <item>Rusia</item>
+
+        <item>Europa</item>
+
+        <item>Mundo</item>
+
     </string-array>
+    <string-array name="text_colors">
+        <item>@color/rojo</item>
+        <item>@color/verde</item>
+        <item>@color/azul</item>
+        <item>@color/rojo</item>
+        <item>@color/verde</item>
+        <item>@color/azul</item>
+        <item>@color/rojo</item>
+        <item>@color/verde</item>
+        <item>@color/azul</item>
+        <item>@color/rojo</item>
+        <item>@color/verde</item>
+        <item>@color/azul</item>
+        <item>@color/rojo</item>
+        <item>@color/verde</item>
+        <item>@color/azul</item>
+        <item>@color/rojo</item>
+        <item>@color/verde</item>
+        <item>@color/azul</item>
+        <item>@color/rojo</item>
+    </string-array>
+
+
 </resources>

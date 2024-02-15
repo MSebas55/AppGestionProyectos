@@ -22,6 +22,7 @@ package com.dam.proyectoandroid;
         import com.dam.proyectoandroid.Database.model.Proyecto;
 
         import java.util.List;
+        import org.w3c.dom.Text;
 
         import retrofit2.Call;
         import retrofit2.Callback;
@@ -101,5 +102,4 @@ public class Login extends AppCompatActivity {
         Intent intent = new Intent(Login.this, Inicio.class);
         startActivity(intent);
     }
-
 }

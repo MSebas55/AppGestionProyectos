@@ -5,14 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradientperfil"
+    android:background="@drawable/icono_login"
     tools:context=".Register">
 
     <View
         android:id="@+id/gradientRegister"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradientperfil"
+        android:background="@drawable/icono_login"
         />
 
     <androidx.constraintlayout.widget.Guideline
@@ -41,9 +41,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/classicaldiary"
-        android:text="SpotSpain"
+        android:text="SyncTask"
         android:textSize="180px"
-        android:textColor="@color/morado_oscuro"
+        android:textColor="@color/verde_principal"
         app:layout_constraintBottom_toTopOf="@+id/h2"
         app:layout_constraintEnd_toStartOf="@id/v2"
         app:layout_constraintStart_toEndOf="@id/v1"
@@ -65,7 +65,7 @@
         android:layout_marginBottom="10dp"
         android:text="Registro:"
         android:textSize="70px"
-        android:textColor="@color/morado_oscuro"
+        android:textColor="@color/verde_principal"
         app:layout_constraintStart_toEndOf="@id/v1"
         app:layout_constraintTop_toTopOf="@id/h2" />
 
@@ -85,6 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Usuario"
+            android:background="@color/verde_principal"
             android:inputType="textPersonName" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -105,6 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Correo"
+            android:background="@color/verde_principal"
             android:inputType="textPersonName" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -125,6 +127,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contraseña"
+            android:background="@color/verde_principal"
             android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>

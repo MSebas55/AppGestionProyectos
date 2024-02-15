@@ -28,6 +28,8 @@ public class Inicio extends AppCompatActivity {
                 replaceFragment(new SearchFragment());
             } else if (item.getItemId() == R.id.profile) {
                 replaceFragment(new ProfileFragment());
+            } else if (item.getItemId() == R.id.task) {
+                replaceFragment(new TaskFragment());
             }
             return true;
         });

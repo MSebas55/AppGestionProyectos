@@ -12,6 +12,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Register extends AppCompatActivity {
 
 
@@ -27,4 +30,8 @@ public class Register extends AppCompatActivity {
 
     }
 
+    public void signUpNewUser(View v){
+        Intent nIntent = new Intent(Register.this, Login.class);
+        startActivity(nIntent);
+    }
 }

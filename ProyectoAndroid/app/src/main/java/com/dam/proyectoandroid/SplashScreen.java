@@ -24,7 +24,7 @@ public class SplashScreen extends AppCompatActivity {
 
         ImageView logoSplash = findViewById(R.id.logoSplash);
 
-        Animation shakeAnimation = AnimationUtils.loadAnimation(this, R.anim.sequential);
+        Animation shakeAnimation = AnimationUtils.loadAnimation(this, R.anim.zoom);
         logoSplash.startAnimation(shakeAnimation);
     }
 
@@ -32,7 +32,7 @@ public class SplashScreen extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreen.this, Login.class);
+                Intent intent = new Intent(SplashScreen.this, LogReg.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
