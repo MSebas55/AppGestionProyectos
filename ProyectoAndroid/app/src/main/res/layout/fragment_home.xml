@@ -4,43 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Contenedor en la parte superior con la palabra "synctask" -->
     <LinearLayout
         android:id="@+id/syncTaskContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:background="@color/verde_principal">
+        android:background="@drawable/rounded_corners">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Synctask"
-            android:textColor="@android:color/white"
+            android:text="Mis Proyectos"
+            android:textColor="@color/verde_oscuro"
             android:textSize="36sp"
             android:textStyle="bold" />
     </LinearLayout>
-
-    <!-- Texto "Mis Proyectos" a la izquierda -->
-    <TextView
-        android:id="@+id/textViewAppName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mis Proyectos"
-        android:textSize="24sp"
-        android:textColor="#FF000000"
-        android:textStyle="bold"
-        android:gravity="start"
-        android:padding="16dp"
-        android:layout_below="@id/syncTaskContainer"
-        android:layout_alignParentStart="true" />
 
     <!-- RecyclerView debajo del texto "Mis Proyectos" -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/historicEventsRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/textViewAppName"
+        android:layout_below="@id/syncTaskContainer"
         android:layout_marginTop="8dp"
         />
 
