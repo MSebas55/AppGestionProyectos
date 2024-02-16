@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -77,7 +78,8 @@ public class ProfileFragment extends Fragment {
     }
 
     public void onMyButtonClick() {
-        Intent nIntent = new Intent(getActivity(), Login.class);
+        Toast.makeText(getActivity(), "Cerrando Sesión", Toast.LENGTH_SHORT).show();
+        Intent nIntent = new Intent(getActivity(), LogReg.class);
         startActivity(nIntent);
     }
 }

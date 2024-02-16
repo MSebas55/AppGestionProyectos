@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchFragment">
+    tools:context=".CalendarFragment">
 
     <CalendarView
         android:id="@+id/calendarView"
@@ -13,6 +13,7 @@
         android:dateTextAppearance="@style/MyCalendarDateTextAppearance"
         android:dayOfWeekTextAppearance="@style/MyCalendarDayOfWeekTextAppearance"
         android:textAppearance="@style/MyCalendarTextAppearance"
+        android:backgroundTintMode=""
         />
 
 </FrameLayout>
