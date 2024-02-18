@@ -81,33 +81,8 @@ public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRV
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             tvEventName = itemView.findViewById(R.id.tvEventName);
-            tvEventLocation = itemView.findViewById(R.id.tvEventLocation);
+            tvEventLocation = itemView.findViewById(R.id.tvEventFechaFin);
         }
     }
-    private void getAll(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constants.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        crudInterface = retrofit.create(CRUDInterface.class);
-        Call<List<Proyecto>> call = crudInterface.getAll();
-        call.enqueue(new Callback<List<Proyecto>>() {
-            @Override
-            public void onResponse(Call<List<Proyecto>> call, Response<List<Proyecto>> response) {
-                if(!response.isSuccessful()){
-                    Log.e("Response err: ",response.message());
-                    return;
-                }
-                proyectos = response.body();
-                ProyectsAdapter proyectsAdapter = new ProyectsAdapter(proyectos, context.getApplicationContext());
-                listView.setAdapter(proyectsAdapter);
-                proyectos.forEach(p -> Log.i("Proyectos: ",p.getNombre()));
-            }
 
-            @Override
-            public void onFailure(Call<List<Proyecto>> call, Throwable t) {
-                Log.e("Trow err: ",t.getMessage());
-            }
-        });
-    }
 }
