@@ -24,14 +24,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:background="@drawable/rounded_all_corners"
+        android:background="@color/verde_guay"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp">
 
         <EditText
             android:id="@+id/inputuser"
             android:layout_width="match_parent"
-            android:background="@drawable/rounded_all_corners"
+            android:background="@color/verde_guay"
             android:layout_height="wrap_content"
             android:hint="Usuario"
             android:drawableStart="@drawable/ic_baseline_person_24"/>
@@ -56,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:background="@drawable/rounded_all_corners"
+        android:background="@color/verde_guay"
         android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp">
 
@@ -64,7 +64,7 @@
             android:id="@+id/inputemail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_all_corners"
+            android:background="@color/verde_guay"
             android:hint="Correo electrónico"
             android:inputType="textEmailAddress"
             android:drawableStart="@drawable/ic_correo"/>
@@ -88,13 +88,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:background="@drawable/rounded_all_corners"
+        android:background="@color/verde_guay"
         android:layout_marginEnd="10dp">
 
         <EditText
             android:id="@+id/inputpassword"
             android:layout_width="match_parent"
-            android:background="@drawable/rounded_all_corners"
+            android:background="@color/verde_guay"
             android:layout_height="wrap_content"
             android:hint="Contraseña"
             android:inputType="textPassword"

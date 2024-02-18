@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Inicio"
-    android:background="#FFF">
+    android:background="@drawable/icono_login">
 
 
     <FrameLayout
@@ -27,8 +27,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu"
-        android:background="@color/azul_claro"
-        app:itemTextColor="#FFF"
-        app:itemIconTint="#FFF"/>
+        android:background="@color/azul_claro"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

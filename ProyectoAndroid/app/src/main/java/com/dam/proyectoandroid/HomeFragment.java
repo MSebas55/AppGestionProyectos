@@ -58,6 +58,7 @@ public class HomeFragment extends Fragment {
         HistoricEventRVAdapter adapter = new HistoricEventRVAdapter(requireContext(), eventNames, eventLocations, textColors);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+
         return view;
     }
 

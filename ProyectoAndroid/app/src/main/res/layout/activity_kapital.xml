@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Kapital"
+    >
+
+    <!-- Encabezado con el nombre del lugar y botón de volver -->
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/verde_principal"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textViewPlaceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proyecto1"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/buttonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Volver"
+            android:textColor="@color/md_theme_dark_shadow"
+            android:backgroundTint="#e0e0e0"
+            android:onClick="Volvera"/>
+    </RelativeLayout>
+
+    <!-- Imágenes -->
+
+    <LinearLayout
+        android:id="@+id/imagesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headerLayout"
+        android:orientation="horizontal"/>
+
+    <!-- Sección de estrellas -->
+    <!-- (Puedes personalizar esta sección según tus necesidades) -->
+
+    <!-- Apartado para dejar una descripción -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/imagesLayout"
+        android:background="#e0e0e0"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/layoutprueba"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/textViewTitle1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre proyecto"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/design_default_color_error"
+                android:onClick="iraKapital"/>
+
+            <TextView
+                android:id="@+id/textViewDescription1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor... "/>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

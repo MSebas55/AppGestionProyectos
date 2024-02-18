@@ -42,12 +42,12 @@ public class ProyectsAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
         if(view == null){
-            view = LayoutInflater.from(context).inflate(R.layout.activity_proyect,viewGroup,false);
+            view = LayoutInflater.from(context).inflate(R.layout.activity_proyecto,viewGroup,false);
 
         }
-        //nameText = view.findViewById(R.id.nameText);
+        nameText = view.findViewById(R.id.nameText);
         nameText.setText(proyectos.get(position).getNombre());
-        //viewButon = view.findViewById(R.id.viewButton);
+        viewButon = view.findViewById(R.id.viewButton);
         return view;
     }
 }
