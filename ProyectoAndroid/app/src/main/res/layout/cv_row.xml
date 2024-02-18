@@ -14,7 +14,7 @@
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" >
+      app:layout_constraintTop_toTopOf="parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,8 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_weight="1"
-            android:background="?android:attr/listDivider"
-            android:backgroundTint="@color/verde_principal"/>
+            android:background="@color/verde_guay"/>
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -70,6 +70,7 @@ public class HomeFragment extends Fragment{
         // Crear y configurar el adaptador del RecyclerView
         /*HistoricEventRVAdapter adapter = new HistoricEventRVAdapter(requireContext(), eventNames, eventFechaFin, textColors);
         recyclerView.setAdapter(adapter);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));*/
 
         return view;

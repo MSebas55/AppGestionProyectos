@@ -1,6 +1,7 @@
 package com.dam.proyectoandroid;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -67,6 +68,15 @@ public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRV
             holder.tvEventName.setTextColor(color);
             holder.tvEventLocation.setTextColor(color);
         }
+        // Establecer el OnClickListener para el itemView
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Aquí puedes iniciar la actividad "Proyecto"
+                Intent intent = new Intent(context, ProyectActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
 

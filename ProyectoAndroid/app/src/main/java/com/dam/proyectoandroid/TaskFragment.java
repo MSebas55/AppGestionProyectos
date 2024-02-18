@@ -3,10 +3,15 @@ package com.dam.proyectoandroid;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +64,24 @@ public class TaskFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_task, container, false);
+        View view = inflater.inflate(R.layout.fragment_task, container, false);
+
+        RecyclerView recyclerView = view.findViewById(R.id.historicEventsRecycler);
+
+        // Obtener las matrices de cadenas de los recursos de cadena
+        String[] eventNamesArray = getResources().getStringArray(R.array.historic_event_names);
+        String[] eventLocationsArray = getResources().getStringArray(R.array.historic_event_locations);
+
+        // Convertir las matrices en ArrayList
+        ArrayList<String> eventNames = new ArrayList<>(Arrays.asList(eventNamesArray));
+        ArrayList<String> eventLocations = new ArrayList<>(Arrays.asList(eventLocationsArray));
+        ArrayList<String> textColors = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.text_colors)));
+
+        // Crear y configurar el adaptador del RecyclerView
+        HistoricEventRVAdapter adapter = new HistoricEventRVAdapter(requireContext(), eventNames, eventLocations, textColors);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        return view;
     }
 }

@@ -54,6 +54,7 @@ public class ProyectsAdapter extends RecyclerView.Adapter<ProyectsAdapter.Proyec
         TextView nameText;
         TextView fechaFinText;
 
+
         public ProyectViewHolder(@NonNull View itemView) {
             super(itemView);
             nameText = itemView.findViewById(R.id.tvEventName);

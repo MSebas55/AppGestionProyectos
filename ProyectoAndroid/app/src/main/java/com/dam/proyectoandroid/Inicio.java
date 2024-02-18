@@ -24,8 +24,8 @@ public class Inicio extends AppCompatActivity {
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             if (item.getItemId() == R.id.home) {
                 replaceFragment(new HomeFragment());
-            } else if (item.getItemId() == R.id.search) {
-                replaceFragment(new SearchFragment());
+            } else if (item.getItemId() == R.id.calendar) {
+                replaceFragment(new CalendarFragment());
             } else if (item.getItemId() == R.id.profile) {
                 replaceFragment(new ProfileFragment());
             } else if (item.getItemId() == R.id.task) {
