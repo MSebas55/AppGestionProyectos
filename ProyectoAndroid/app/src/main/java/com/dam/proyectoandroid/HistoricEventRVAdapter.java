@@ -91,8 +91,7 @@ public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRV
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             tvEventName = itemView.findViewById(R.id.tvEventName);
-            tvEventLocation = itemView.findViewById(R.id.tvEventFechaFin);
+            tvEventLocation = itemView.findViewById(R.id.tvEventLocation);
         }
     }
-
 }
