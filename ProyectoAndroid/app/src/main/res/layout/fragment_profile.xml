@@ -15,7 +15,7 @@
         <ImageView
             android:id="@+id/imageViewProfile"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="200dp"
             android:layout_marginStart="60dp"
             android:layout_marginTop="60dp"
             android:layout_marginEnd="60dp"
@@ -23,7 +23,7 @@
             android:layout_weight="1"
             android:contentDescription="Imagen de perfil"
             android:scaleType="centerCrop"
-            android:src="@drawable/icono_login" />
+            android:src="@drawable/ic_baseline_person_24" />
 
         <!-- Nombre de usuario -->
         <TextView
@@ -32,39 +32,51 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageViewProfile"
             android:padding="16dp"
-            android:text="Juanito"
+            android:text="Juan Gómez"
             android:textColor="#FFFF"
             android:gravity="center"
             android:textSize="30sp"
             android:textStyle="bold"/>
-
-        <!-- Botones al final de la pantalla -->
-        <LinearLayout
+        <TextView
+            android:id="@+id/textViewMail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:padding="16dp">
-
+            android:layout_below="@+id/textViewUsername"
+            android:padding="16dp"
+            android:text="juanito@gmail.com"
+            android:textColor="#FFFF"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textStyle="bold"/>
             <Button
                 android:id="@+id/buttonOption1"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_below="@+id/textViewMail"
                 android:backgroundTint="#e0e0e0"
                 android:textColor="@color/md_theme_dark_shadow"
-                android:text="Eliminar usuario" />
+                android:text="Cambiar Contraseña" />
 
-            <Button
-                android:id="@+id/buttonOption2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Cambiar de cuenta"
-                android:textColor="@color/md_theme_dark_shadow"
-                android:backgroundTint="#e0e0e0"
-                android:onClick="onMyButtonClick"/>
-        </LinearLayout>
+        <Button
+            android:id="@+id/buttonOption2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_below="@+id/buttonOption1"
+            android:backgroundTint="#e0e0e0"
+            android:textColor="@color/md_theme_dark_shadow"
+            android:text="Editar Perfil" />
+        <Button
+            android:id="@+id/buttonOption3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_below="@+id/buttonOption2"
+            android:backgroundTint="#e0e0e0"
+            android:textColor="@color/md_theme_dark_shadow"
+            android:text="Cerrar Sesión"
+            android:onClick="onMyButtonClick"/>
 
     </RelativeLayout>
 

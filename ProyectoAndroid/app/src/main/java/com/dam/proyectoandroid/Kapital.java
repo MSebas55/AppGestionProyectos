@@ -13,7 +13,7 @@ public class Kapital extends AppCompatActivity {
         setContentView(R.layout.activity_kapital);
     }
     public void VolveraBuscador() {
-        Intent nIntent = new Intent(Kapital.this, SearchFragment.class);
+        Intent nIntent = new Intent(Kapital.this, CalendarFragment.class);
         startActivity(nIntent);
     }
 }

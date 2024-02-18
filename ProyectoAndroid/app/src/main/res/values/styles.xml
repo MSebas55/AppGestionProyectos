@@ -1,17 +1,17 @@
 <resources>
-    <style name="MyCalendarDateTextAppearance">
-        <item name="android:textColor">@android:color/white</item>
+    <style name="SelectedDayStyle">
+        <item name="android:textColor">@color/verde_guay</item>
     </style>
-    <style name="MyCalendarDayOfWeekTextAppearance">
-        <item name="android:textColor">@android:color/white</item>
+    <style name="NonSelectedDayStyle">
+        <item name="android:textColor">@color/verde_oscuro</item>
     </style>
 
     <style name="MyCalendarMonthTextAppearance">
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColor">@color/verde_guay</item>
     </style>
 
     <style name="MyCalendarYearTextAppearance">
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColor">#000</item>
     </style>
     <style name="MyCalendarTextAppearance">
         <item name="android:textColor">@android:color/white</item>
