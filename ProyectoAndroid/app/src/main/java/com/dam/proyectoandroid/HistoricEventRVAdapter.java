@@ -1,6 +1,7 @@
 package com.dam.proyectoandroid;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -67,6 +68,15 @@ public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRV
             holder.tvEventName.setTextColor(color);
             holder.tvEventLocation.setTextColor(color);
         }
+        // Establecer el OnClickListener para el itemView
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Aquí puedes iniciar la actividad "Proyecto"
+                Intent intent = new Intent(context, ProyectActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
 
@@ -81,33 +91,8 @@ public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRV
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             tvEventName = itemView.findViewById(R.id.tvEventName);
-            tvEventLocation = itemView.findViewById(R.id.tvEventLocation);
+            tvEventLocation = itemView.findViewById(R.id.tvEventFechaFin);
         }
     }
-    private void getAll(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constants.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        crudInterface = retrofit.create(CRUDInterface.class);
-        Call<List<Proyecto>> call = crudInterface.getAll();
-        call.enqueue(new Callback<List<Proyecto>>() {
-            @Override
-            public void onResponse(Call<List<Proyecto>> call, Response<List<Proyecto>> response) {
-                if(!response.isSuccessful()){
-                    Log.e("Response err: ",response.message());
-                    return;
-                }
-                proyectos = response.body();
-                ProyectsAdapter proyectsAdapter = new ProyectsAdapter(proyectos, context.getApplicationContext());
-                listView.setAdapter(proyectsAdapter);
-                proyectos.forEach(p -> Log.i("Proyectos: ",p.getNombre()));
-            }
 
-            @Override
-            public void onFailure(Call<List<Proyecto>> call, Throwable t) {
-                Log.e("Trow err: ",t.getMessage());
-            }
-        });
-    }
 }
