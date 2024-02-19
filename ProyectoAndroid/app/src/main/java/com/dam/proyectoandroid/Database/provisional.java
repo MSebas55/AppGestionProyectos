@@ -27,20 +27,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class provisional extends AppCompatActivity {
     public static List<Proyecto> proyectos;
     static CRUDInterface crudInterface;
-    private Context mContext;
     RecyclerView recyclerView;
 
      public void onCreate(Bundle savedInstanceState){
-
-
          super.onCreate(savedInstanceState);
          setContentView(R.layout.fragment_home);
-         mContext = this;
+
          Toast.makeText(getApplicationContext(), "hola", Toast.LENGTH_SHORT).show();
-         recyclerView = findViewById(R.id.historicEventsRecycler);
+         recyclerView = findViewById(R.id.projectRecyclerView);
          getAll();
-
-
      }
 
 
@@ -60,13 +55,13 @@ public class provisional extends AppCompatActivity {
                     return;
                 }
                 // Obtener las matrices de cadenas de los recursos de cadena
-                ArrayList<String> eventNames = new ArrayList<>();
-                ArrayList<String> eventFechaFin = new ArrayList<>();
+                //ArrayList<String> eventNames = new ArrayList<>();
+                //ArrayList<String> eventFechaFin = new ArrayList<>();
                 List<Proyecto> proyectos = response.body();
                 //ArrayList<String> textColors = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.text_colors)));
 
                 // Asignar el adaptador al RecyclerView
-                ProyectsAdapter proyectsAdapter = new ProyectsAdapter(mContext,proyectos);
+                ProyectsAdapter proyectsAdapter = new ProyectsAdapter(getApplicationContext(),proyectos);
                 recyclerView.setAdapter(proyectsAdapter);
 
 
@@ -76,10 +71,10 @@ public class provisional extends AppCompatActivity {
 
 
 
-                for (Proyecto proyecto : proyectos) {
-                    eventNames.add(proyecto.getNombre());
-                    eventFechaFin.add(proyecto.getFechafin());
-                }
+                //for (Proyecto proyecto : proyectos) {
+                //    eventNames.add(proyecto.getNombre());
+                //    eventFechaFin.add(proyecto.getFechafin());
+                //}
 
             }
 

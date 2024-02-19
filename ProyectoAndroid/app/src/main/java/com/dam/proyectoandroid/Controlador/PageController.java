@@ -5,9 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.dam.proyectoandroid.Login;
 import com.dam.proyectoandroid.LoginFragment;
-import com.dam.proyectoandroid.Register;
 import com.dam.proyectoandroid.RegisterFragment;
 
 public class PageController extends FragmentPagerAdapter {
