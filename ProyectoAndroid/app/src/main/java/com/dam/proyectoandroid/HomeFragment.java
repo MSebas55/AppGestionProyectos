@@ -6,13 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dam.proyectoandroid.Database.Constants;
 import com.dam.proyectoandroid.Database.Interfaces.ProjectInterface;
-import com.dam.proyectoandroid.Database.adapters.ProyectsAdapter;
+import com.dam.proyectoandroid.Database.adapters.ProjectAdapter;
 import com.dam.proyectoandroid.Database.model.Proyecto;
 
 import java.util.List;
@@ -32,7 +33,7 @@ public class HomeFragment extends Fragment{
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
@@ -62,7 +63,7 @@ public class HomeFragment extends Fragment{
                 List<Proyecto> proyectos = response.body();
 
                 // Asignar el adaptador al RecyclerView
-                ProyectsAdapter proyectsAdapter = new ProyectsAdapter(getContext(),proyectos);
+                ProjectAdapter proyectsAdapter = new ProjectAdapter(getContext(),proyectos);
                 recyclerView.setAdapter(proyectsAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 

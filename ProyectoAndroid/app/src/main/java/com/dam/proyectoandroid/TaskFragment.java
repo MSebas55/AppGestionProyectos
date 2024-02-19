@@ -13,9 +13,7 @@ import android.view.ViewGroup;
 
 import com.dam.proyectoandroid.Database.Constants;
 import com.dam.proyectoandroid.Database.Interfaces.TaskInterface;
-import com.dam.proyectoandroid.Database.adapters.ProyectsAdapter;
-import com.dam.proyectoandroid.Database.adapters.TasksAdapter;
-import com.dam.proyectoandroid.Database.model.Proyecto;
+import com.dam.proyectoandroid.Database.adapters.TaskAdapter;
 import com.dam.proyectoandroid.Database.model.Tarea;
 
 import java.util.List;
@@ -70,7 +68,7 @@ public class TaskFragment extends Fragment {
                 List<Tarea> tareas = response.body();
 
                 // Asignar el adaptador al RecyclerView
-                TasksAdapter tasksAdapter = new TasksAdapter(getContext(),tareas);
+                TaskAdapter tasksAdapter = new TaskAdapter(getContext(),tareas);
                 recyclerView.setAdapter(tasksAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
