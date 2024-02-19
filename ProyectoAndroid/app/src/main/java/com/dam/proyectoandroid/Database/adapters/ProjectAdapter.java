@@ -1,6 +1,7 @@
 package com.dam.proyectoandroid.Database.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.dam.proyectoandroid.Database.model.Proyecto;
 import com.dam.proyectoandroid.Database.model.Tarea;
+import com.dam.proyectoandroid.ProjectActivity;
 import com.dam.proyectoandroid.R;
 
 import java.util.ArrayList;
@@ -44,6 +46,15 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ProjectV
         holder.nameText.setText(proyecto.getNombre());
         holder.fechaFinText.setText("Fecha máxima de entrega: " + proyecto.getFechafin());
         // Aquí puedes establecer cualquier otro dato que necesites
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Aquí puedes iniciar la actividad "Proyecto"
+                Intent intent = new Intent(context, ProjectActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     // Devuelve el número total de elementos en el conjunto de datos

@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.dam.proyectoandroid.R;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -27,8 +29,14 @@ public class CalendarFragment extends Fragment {
 
         textodia = rootView.findViewById(R.id.textodia);
         calendarView = rootView.findViewById(R.id.calendarView);
+
+        // Obtener el primer día del mes actual
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DAY_OF_MONTH, 1); // Establecer el primer día del mes
+        long minDate = calendar.getTimeInMillis();
+
         // Establecer la fecha mínima
-        calendarView.setMinDate(Calendar.getInstance().getTimeInMillis());
+        calendarView.setMinDate(minDate);
 
         // Establecer la fecha máxima
         Calendar maxCalendar = Calendar.getInstance();
@@ -38,6 +46,8 @@ public class CalendarFragment extends Fragment {
         // Obtener la fecha actual y establecerla en el TextView
         String fechaActual = obtenerFechaActual();
         textodia.setText("Día actual: " + fechaActual);
+
+        // Configurar el CalendarView
         calendarView.setWeekDayTextAppearance(R.style.MyCalendarMonthTextAppearance);
         calendarView.setBackgroundColor(getResources().getColor(R.color.verde_claro));
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {

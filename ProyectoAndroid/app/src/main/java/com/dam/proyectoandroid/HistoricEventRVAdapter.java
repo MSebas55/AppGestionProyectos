@@ -64,7 +64,7 @@ public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRV
             @Override
             public void onClick(View v) {
                 // Aquí puedes iniciar la actividad "Proyecto"
-                Intent intent = new Intent(context, ProyectActivity.class);
+                Intent intent = new Intent(context, ProjectActivity.class);
                 context.startActivity(intent);
             }
         });

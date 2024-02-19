@@ -1,6 +1,6 @@
 package com.dam.proyectoandroid.Database.adapters;
-
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dam.proyectoandroid.Database.model.Tarea;
+import com.dam.proyectoandroid.ProjectActivity;
 import com.dam.proyectoandroid.R;
 
 import java.util.ArrayList;
@@ -25,7 +26,6 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     public TaskAdapter(Context context, List<Tarea> tareas) {
         this.context = context;
         this.tareas = tareas;
-
     }
 
     // Método llamado cuando se necesita crear una nueva vista de elemento
@@ -43,6 +43,16 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         holder.nameText.setText(tarea.getNombre());
         holder.fechaFinText.setText("Fecha máxima de entrega: " + tarea.getFechafin());
         // Aquí puedes establecer cualquier otro dato que necesites
+
+        // Establecer el OnClickListener para el itemView
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Aquí puedes iniciar la actividad "Proyecto"
+                Intent intent = new Intent(context, ProjectActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     // Devuelve el número total de elementos en el conjunto de datos
@@ -56,12 +66,10 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         TextView nameText;
         TextView fechaFinText;
 
-
         public TaskViewHolder(@NonNull View itemView) {
             super(itemView);
             nameText = itemView.findViewById(R.id.tvEventName);
             fechaFinText = itemView.findViewById(R.id.tvEventFechaFin);
         }
-
     }
 }
