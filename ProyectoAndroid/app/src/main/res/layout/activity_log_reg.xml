@@ -95,6 +95,7 @@
         app:layout_constraintBottom_toTopOf="@id/h3"
         android:textSize="20sp"
         android:text="Entrar"
+        android:textSize="20sp"
         android:onClick="changeToInicio">
     </Button>
 

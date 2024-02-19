@@ -4,31 +4,26 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+
 import com.dam.proyectoandroid.Database.model.Proyecto;
 import com.dam.proyectoandroid.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class ProyectsAdapter extends RecyclerView.Adapter<ProyectsAdapter.ProyectViewHolder> {
+public class ProyectsAdapter extends BaseAdapter {
 
-    private List<Proyecto> proyectos;
-    private ArrayList<String> textColors;
-    private Context context;
+    List<Proyecto> proyectos;
 
-    // Constructor
-    public ProyectsAdapter(Context context, List<Proyecto> proyectos) {
-        this.context = context;
-        this.proyectos = proyectos;
+    Context context;
+    TextView nameText;
+    Button viewButon;
 
+    public ProyectsAdapter(List<Proyecto> proyectos, Context context) {
     }
 
-    // Método llamado cuando se necesita crear una nueva vista de elemento
-    @NonNull
     @Override
     public ProyectViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cv_row, parent, false);
@@ -50,17 +45,25 @@ public class ProyectsAdapter extends RecyclerView.Adapter<ProyectsAdapter.Proyec
         return proyectos.size();
     }
 
-    // Clase interna para mantener las referencias de las vistas de cada elemento del RecyclerView
-    public static class ProyectViewHolder extends RecyclerView.ViewHolder {
-        TextView nameText;
-        TextView fechaFinText;
+    @Override
+    public Object getItem(int i) {
+        return proyectos.get(i);
+    }
 
+    @Override
+    public long getItemId(int i) {
+        return proyectos.get(i).getId();
+    }
 
-        public ProyectViewHolder(@NonNull View itemView) {
-            super(itemView);
-            nameText = itemView.findViewById(R.id.tvEventName);
-            fechaFinText = itemView.findViewById(R.id.tvEventFechaFin);
+    @Override
+    public View getView(int position, View view, ViewGroup viewGroup) {
+        if(view == null){
+            view = LayoutInflater.from(context).inflate(R.layout.activity_proyect,viewGroup,false);
+
         }
-
+        //nameText = view.findViewById(R.id.nameText);
+        nameText.setText(proyectos.get(position).getNombre());
+        //viewButon = view.findViewById(R.id.viewButton);
+        return view;
     }
 }

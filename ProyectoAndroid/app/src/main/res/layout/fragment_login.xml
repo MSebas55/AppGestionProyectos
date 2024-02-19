@@ -5,9 +5,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".LoginFragment"
-    android:gravity="center"
-    android:padding="40dp"
-    >
+    android:gravity="center"   
+
+
+
+
+    
+    android:paddingLeft="40dp"
+    android:paddingRight="40dp">
 
     <!-- Correo electrónico -->
     <TextView
