@@ -27,7 +27,6 @@ public class CalendarFragment extends Fragment {
 
         textodia = rootView.findViewById(R.id.textodia);
         calendarView = rootView.findViewById(R.id.calendarView);
-
         // Establecer la fecha mínima
         calendarView.setMinDate(Calendar.getInstance().getTimeInMillis());
 
