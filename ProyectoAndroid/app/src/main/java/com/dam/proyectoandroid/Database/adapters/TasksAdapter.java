@@ -4,26 +4,28 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.dam.proyectoandroid.Database.model.Proyecto;
+import com.dam.proyectoandroid.Database.model.Tarea;
 import com.dam.proyectoandroid.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProyectsAdapter extends RecyclerView.Adapter<ProyectsAdapter.ProyectViewHolder> {
+public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.ProyectViewHolder> {
 
-    private List<Proyecto> proyectos;
+    private List<Tarea> tareas;
     private ArrayList<String> textColors;
     private Context context;
 
     // Constructor
-    public ProyectsAdapter(Context context, List<Proyecto> proyectos) {
+    public TasksAdapter(Context context, List<Tarea> tareas) {
         this.context = context;
-        this.proyectos = proyectos;
+        this.tareas = tareas;
 
     }
 
@@ -38,16 +40,16 @@ public class ProyectsAdapter extends RecyclerView.Adapter<ProyectsAdapter.Proyec
     // Método llamado para rellenar los datos en una vista de elemento
     @Override
     public void onBindViewHolder(@NonNull ProyectViewHolder holder, int position) {
-        Proyecto proyecto = proyectos.get(position);
-        holder.nameText.setText(proyecto.getNombre());
-        holder.fechaFinText.setText("Fecha máxima de entrega: " + proyecto.getFechafin());
+        Tarea tarea = tareas.get(position);
+        holder.nameText.setText(tarea.getNombre());
+        holder.fechaFinText.setText("Fecha máxima de entrega: " + tarea.getFechafin());
         // Aquí puedes establecer cualquier otro dato que necesites
     }
 
     // Devuelve el número total de elementos en el conjunto de datos
     @Override
     public int getItemCount() {
-        return proyectos.size();
+        return tareas.size();
     }
 
     // Clase interna para mantener las referencias de las vistas de cada elemento del RecyclerView

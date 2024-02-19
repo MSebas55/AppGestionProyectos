@@ -7,7 +7,8 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 
-public interface CRUDInterface {
+public interface ProjectInterface {
     @GET("proyecto/all")
     Call<List<Proyecto>> getAll();
+
 }

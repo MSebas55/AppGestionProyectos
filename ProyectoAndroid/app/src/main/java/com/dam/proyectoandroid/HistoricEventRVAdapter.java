@@ -3,7 +3,6 @@ package com.dam.proyectoandroid;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,19 +12,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.dam.proyectoandroid.Database.Constants;
-import com.dam.proyectoandroid.Database.Interfaces.CRUDInterface;
-import com.dam.proyectoandroid.Database.adapters.ProyectsAdapter;
+import com.dam.proyectoandroid.Database.Interfaces.ProjectInterface;
 import com.dam.proyectoandroid.Database.model.Proyecto;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRVAdapter.MyViewHolder> {
     private Context context;
@@ -34,7 +25,7 @@ public class HistoricEventRVAdapter extends RecyclerView.Adapter<HistoricEventRV
     private ArrayList<String> textColors;
 
     List<Proyecto> proyectos;
-    CRUDInterface crudInterface;
+    ProjectInterface crudInterface;
     ListView listView;
 
     public HistoricEventRVAdapter(Context context, ArrayList<String> eventNames, ArrayList<String> eventLocations, ArrayList<String> textColors) {

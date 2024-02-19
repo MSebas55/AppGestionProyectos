@@ -2,7 +2,7 @@ package com.dam.proyectoandroid.Database.model;
 
 import androidx.annotation.NonNull;
 
-public class Proyecto {
+public class Tarea {
     private Integer id;
     private String nombre;
     private String estado;
@@ -10,16 +10,16 @@ public class Proyecto {
     private String fechaini;
     private String fechafin;
 
-    public Proyecto() {
+    public Tarea() {
     }
 
-    public Proyecto(Integer id, String nombre, String estado, String descripcion, String fechaini, String fechafin) {
-        this.id = id;
-        this.nombre = nombre;
-        this.estado = estado;
-        this.descripcion = descripcion;
-        this.fechaini = fechaini;
-        this.fechafin = fechafin;
+    public Tarea(Integer id, String nombre, String estado, String descripcion, String fechaini, String fechafin) {
+        this.id=id;
+        this.nombre=nombre;
+        this.estado=estado;
+        this.descripcion=descripcion;
+        this.fechaini=fechaini;
+        this.fechafin=fechafin;
     }
 
     public Integer getId() {
