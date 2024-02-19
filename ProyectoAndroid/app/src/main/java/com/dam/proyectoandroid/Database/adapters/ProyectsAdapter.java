@@ -25,7 +25,23 @@ public class ProyectsAdapter extends BaseAdapter {
     }
 
     @Override
-    public int getCount() {
+    public ProyectViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cv_row, parent, false);
+        return new ProyectViewHolder(view);
+    }
+
+    // Método llamado para rellenar los datos en una vista de elemento
+    @Override
+    public void onBindViewHolder(@NonNull ProyectViewHolder holder, int position) {
+        Proyecto proyecto = proyectos.get(position);
+        holder.nameText.setText(proyecto.getNombre());
+        holder.fechaFinText.setText("Fecha máxima de entrega: " + proyecto.getFechafin());
+        // Aquí puedes establecer cualquier otro dato que necesites
+    }
+
+    // Devuelve el número total de elementos en el conjunto de datos
+    @Override
+    public int getItemCount() {
         return proyectos.size();
     }
 

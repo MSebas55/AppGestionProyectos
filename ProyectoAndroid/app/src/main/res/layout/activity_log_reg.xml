@@ -93,6 +93,7 @@
         app:layout_constraintStart_toEndOf="@id/v1"
         app:layout_constraintEnd_toStartOf="@id/v2"
         app:layout_constraintBottom_toTopOf="@id/h3"
+        android:textSize="20sp"
         android:text="Entrar"
         android:textSize="20sp"
         android:onClick="changeToInicio">

@@ -11,8 +11,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.dam.proyectoandroid.Controlador.PageController;
-import com.dam.proyectoandroid.databinding.ActivityInicioBinding;
-import com.dam.proyectoandroid.databinding.ActivityLogRegBinding;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 

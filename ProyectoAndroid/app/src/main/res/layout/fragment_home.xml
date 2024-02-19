@@ -22,7 +22,7 @@
 
     <!-- RecyclerView debajo del texto "Mis Proyectos" -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/historicEventsRecycler"
+        android:id="@+id/projectRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/syncTaskContainer"

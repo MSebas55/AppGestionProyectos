@@ -29,4 +29,6 @@ public class Tarea {
     private String fechaini;
     @Column(name = "fechafin")
     private String fechafin;
+    @Column(name = "proyecto_id")
+    private Integer proyectoId;
 }
