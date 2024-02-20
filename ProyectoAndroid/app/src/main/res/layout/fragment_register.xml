@@ -6,8 +6,7 @@
     android:orientation="vertical"
     tools:context=".LoginFragment"
     android:gravity="center"
-    android:paddingHorizontal="40dp"
-    android:paddingBottom="70dp">
+    android:paddingHorizontal="20dp">
 
 
     <TextView

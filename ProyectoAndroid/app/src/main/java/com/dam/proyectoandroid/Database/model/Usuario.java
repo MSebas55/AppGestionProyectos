@@ -12,8 +12,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(Integer id, String nombre, String apellido, String contra, String email) {
-        this.id = id;
+    public Usuario(String nombre, String apellido, String contra, String email) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.contra = contra;
