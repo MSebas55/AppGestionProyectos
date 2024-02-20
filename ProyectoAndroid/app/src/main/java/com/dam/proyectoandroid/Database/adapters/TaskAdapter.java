@@ -18,7 +18,6 @@ import java.util.List;
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder> {
 
     private List<Tarea> tareas;
-    private ArrayList<String> textColors;
     private Context context;
 
     // Constructor

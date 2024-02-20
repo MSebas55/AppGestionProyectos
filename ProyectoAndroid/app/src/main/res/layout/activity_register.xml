@@ -27,14 +27,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.75" />
+        app:layout_constraintGuide_begin="549dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.625" />
+        app:layout_constraintGuide_end="53dp" />
 
     <TextView
         android:id="@+id/titulo"
@@ -74,17 +74,38 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toTopOf="@id/mailInputLogin"
+        app:layout_constraintBottom_toTopOf="@id/lastNameInputLogin"
         app:layout_constraintEnd_toStartOf="@id/v2"
         app:layout_constraintStart_toEndOf="@id/v1"
         app:layout_constraintTop_toBottomOf="@id/registro"
         app:startIconDrawable="@drawable/ic_persona">
 
         <EditText
-            android:id="@+id/usuarioreg"
+            android:id="@+id/namereg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Usuario"
+            android:hint="Nombre"
+            android:background="@color/verde_principal"
+            android:inputType="textPersonName" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lastNameInputLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@id/mailInputLogin"
+        app:layout_constraintEnd_toStartOf="@id/v2"
+        app:layout_constraintStart_toEndOf="@id/v1"
+        app:layout_constraintTop_toBottomOf="@id/usernameInputLogin"
+        app:startIconDrawable="@drawable/ic_correo">
+
+        <EditText
+            android:id="@+id/lastnamereg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Apellido"
             android:background="@color/verde_principal"
             android:inputType="textPersonName" />
 
@@ -95,10 +116,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@id/h1"
+        app:layout_constraintBottom_toTopOf="@id/passwordInputLogin"
         app:layout_constraintEnd_toStartOf="@id/v2"
         app:layout_constraintStart_toEndOf="@id/v1"
-        app:layout_constraintTop_toBottomOf="@id/usernameInputLogin"
+        app:layout_constraintTop_toBottomOf="@id/lastNameInputLogin"
         app:startIconDrawable="@drawable/ic_correo">
 
         <EditText
@@ -118,7 +139,7 @@
         android:layout_marginTop="15dp"
         app:layout_constraintEnd_toStartOf="@id/v2"
         app:layout_constraintStart_toEndOf="@id/v1"
-        app:layout_constraintTop_toBottomOf="@id/h1"
+        app:layout_constraintTop_toBottomOf="@id/mailInputLogin"
         app:passwordToggleEnabled="true"
         app:startIconDrawable="@drawable/ic_llave">
 
@@ -138,10 +159,10 @@
         android:layout_height="wrap_content"
         android:onClick="signUpNewUser"
         android:text="Registrarse"
-        app:layout_constraintBottom_toTopOf="@+id/h3"
+        app:layout_constraintBottom_toTopOf="@+id/h4"
         app:layout_constraintEnd_toStartOf="@id/v2"
         app:layout_constraintStart_toEndOf="@id/v1"
-        app:layout_constraintTop_toTopOf="@+id/h4" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordInputLogin" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/v1"
