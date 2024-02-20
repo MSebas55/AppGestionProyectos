@@ -25,6 +25,8 @@ public class ProyectoControl {
         return proyectoService.getProyectoById(id);
     }
 
+    @GetMapping("/nombre/{nombre}")
+    public Proyecto getProyectoByNombre(@PathVariable String nombre) {return proyectoService.getProyectoByNombre(nombre);}
     @PostMapping("/save")
     public Proyecto saveProyecto(@RequestBody Proyecto proyecto) {
         return proyectoService.saveProyecto(proyecto);

@@ -24,6 +24,11 @@ public class ProyectoService {
         return proyectoRepository.save(proyecto);
     }
 
+    public Proyecto getProyectoByNombre(String nombre) {
+        return proyectoRepository.findByNombre(nombre);
+    }
+
+
     public Boolean deleteProyecto(Integer id) {
         proyectoRepository.deleteById(id);
 

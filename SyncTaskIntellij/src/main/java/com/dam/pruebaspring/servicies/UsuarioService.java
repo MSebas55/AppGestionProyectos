@@ -20,6 +20,13 @@ public class UsuarioService {
         return usuarioRepository.findById(id).get();
     }
 
+    public Usuario getUsuarioByNombre(String nombre) {
+        return usuarioRepository.findByNombre(nombre);
+    }
+    public Usuario getUsuarioByEmail(String email) {
+        return usuarioRepository.findByEmail(email);
+    }
+
     public Usuario saveUsuario(Usuario usuario) {
         return usuarioRepository.save(usuario);
     }

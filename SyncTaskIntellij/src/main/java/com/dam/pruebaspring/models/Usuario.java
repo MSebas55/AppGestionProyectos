@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Entity
 @Table(name = "usuarios") // name tiene el nombre de la base de datos
@@ -19,6 +21,7 @@ public class Usuario {
     private Integer id;
     @Column(name = "nombre")
     private String nombre;
+
     @Column(name = "apellido")
     private String apellido;
     @Column(name = "contra")

@@ -13,6 +13,13 @@ public class UsuarioControl {
     @Autowired
     private UsuarioService usuarioService;
 
+    @GetMapping("/nombre/{nombre}")
+    public Usuario getUsuarioByNombre(@PathVariable String nombre) {return usuarioService.getUsuarioByNombre(nombre);}
+
+    @GetMapping("/email/{email}")
+    public Usuario getUsuarioByEmail(@PathVariable String email) {return usuarioService.getUsuarioByEmail(email);}
+
+
     @GetMapping("/all")
     public List<Usuario> getAllUsuarios() {
         return usuarioService.getAllUsuarios();

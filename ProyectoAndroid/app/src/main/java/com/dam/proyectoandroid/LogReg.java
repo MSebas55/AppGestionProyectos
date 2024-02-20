@@ -1,5 +1,6 @@
 package com.dam.proyectoandroid;
 
+import static com.dam.proyectoandroid.LoginFragment.getCampos;
 import static com.dam.proyectoandroid.RegisterFragment.crearUser;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,8 @@ import com.dam.proyectoandroid.Database.Interfaces.UserInterface;
 import com.dam.proyectoandroid.Database.model.Usuario;
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -62,8 +65,9 @@ public class LogReg extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
 
-                            //comprobar
-                            changeToInicio(v);
+                            List<String> campos = getCampos();
+                            loginUser(campos.get(0), campos.get(1),v);
+
                         }
                     });
                 }
@@ -118,5 +122,32 @@ public class LogReg extends AppCompatActivity {
             }
         });
     }
+    public void loginUser(String email,String password,View v) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Constants.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        userInterface = retrofit.create(UserInterface.class);
 
+        Call<Usuario> call = userInterface.getUserByEmail(email);
+        call.enqueue(new Callback<Usuario>() {
+            @Override
+            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(LogReg.this, "a", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                usuario = response.body();
+                if(usuario.getContra().equals(password)){
+                    changeToInicio(v);
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<Usuario> call, Throwable t) {
+            }
+        });
+    }
 }
