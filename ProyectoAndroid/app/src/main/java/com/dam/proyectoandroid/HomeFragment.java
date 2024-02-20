@@ -75,7 +75,6 @@ public class HomeFragment extends Fragment {
         // Referenciar los campos del layout
         EditText editTextNombre = dialogView.findViewById(R.id.editTextNombre);
         EditText editTextDescripcion = dialogView.findViewById(R.id.editTextDescripcion);
-        EditText editTextEstado = dialogView.findViewById(R.id.editTextEstado);
         EditText editTextFechaFin = dialogView.findViewById(R.id.editTextFechaFin);
 
         // Configurar la fecha de inicio como la fecha actual

@@ -41,32 +41,12 @@
             android:background="@drawable/rounded_all_corners"
             />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editTextEstadoLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editTextDescripcionLayout"
-        android:padding="20dp"
-        android:textColorHint="#FFF"
-        android:hint="Estado">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextEstado"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:textColor="#FFF"
-            android:background="@drawable/rounded_all_corners"
-            />
-    </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextFechaFinLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextEstadoLayout"
+        android:layout_below="@id/editTextDescripcionLayout"
         android:padding="20dp"
-        text
         android:textColorHint="#FFF"
         android:hint="Fecha de fin">
 

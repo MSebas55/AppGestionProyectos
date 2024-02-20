@@ -41,7 +41,6 @@ public class LogReg extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        registerbutton = findViewById(R.id.registerbutton);
         setContentView(R.layout.activity_log_reg);
         tabLayout = findViewById(R.id.tablayout);
         viewPager = findViewById(R.id.viewpager);
@@ -59,7 +58,14 @@ public class LogReg extends AppCompatActivity {
                 viewPager.setCurrentItem(tab.getPosition());
                 if (tab.getPosition()==0) {
                     pagerAdapter.notifyDataSetChanged();
-                    //comprobar
+                    registerbutton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            //comprobar
+                            changeToInicio(v);
+                        }
+                    });
                 }
                 if (tab.getPosition()==1) {
                     pagerAdapter.notifyDataSetChanged();
