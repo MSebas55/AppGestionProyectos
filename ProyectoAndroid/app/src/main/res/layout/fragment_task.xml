@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:id="@+id/syncTaskContainer"
@@ -28,5 +29,17 @@
         android:layout_below="@id/syncTaskContainer"
         android:layout_marginTop="8dp"
         />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floating_action_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:contentDescription="Añadir Proyecto"
+        android:backgroundTint="@color/verde_claro"
+        app:srcCompat="@drawable/ic_add"
+        app:tint="#FFF"
+        app:maxImageSize="48dp"/>
 
 </RelativeLayout>

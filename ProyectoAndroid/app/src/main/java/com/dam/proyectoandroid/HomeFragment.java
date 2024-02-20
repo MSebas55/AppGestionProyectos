@@ -66,7 +66,7 @@ public class HomeFragment extends Fragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
 
         // Establecer el título del AlertDialog y su color
-        builder.setTitle(Html.fromHtml("<font color='#7DCA6A'>Crear nuevo Proyecto</font>"));
+        builder.setTitle(Html.fromHtml("<font color='#0F3800'>Crear nuevo Proyecto</font>"));
 
         // Inflar el layout personalizado
         View dialogView = getLayoutInflater().inflate(R.layout.alertdialog_home, null);
