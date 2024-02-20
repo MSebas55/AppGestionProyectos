@@ -78,7 +78,6 @@ public class LogReg extends AppCompatActivity {
                         public void onClick(View v) {
 
                             addUser(crearUser());
-                            changeToInicio(v);
                         }
                     });
                 }
