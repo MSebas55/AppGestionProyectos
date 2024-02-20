@@ -5,7 +5,7 @@ import androidx.annotation.NonNull;
 public class Proyecto {
     private Integer id;
     private String nombre;
-    private String estado;
+    private Boolean estado;
     private String descripcion;
     private String fechaini;
     private String fechafin;
@@ -13,8 +13,7 @@ public class Proyecto {
     public Proyecto() {
     }
 
-    public Proyecto(Integer id, String nombre, String estado, String descripcion, String fechaini, String fechafin) {
-        this.id = id;
+    public Proyecto(String nombre, Boolean estado, String descripcion, String fechaini, String fechafin) {
         this.nombre = nombre;
         this.estado = estado;
         this.descripcion = descripcion;
@@ -38,11 +37,11 @@ public class Proyecto {
         this.nombre = nombre;
     }
 
-    public String getEstado() {
+    public Boolean getEstado() {
         return estado;
     }
 
-    public void setEstado(String estado) {
+    public void setEstado(Boolean estado) {
         this.estado = estado;
     }
 

@@ -103,13 +103,11 @@ public class LogReg extends AppCompatActivity {
                 .build();
         userInterface = retrofit.create(UserInterface.class);
 
-        Toast.makeText(getApplicationContext(), usuario.getNombre(), Toast.LENGTH_SHORT).show();
         Call<Usuario> call = userInterface.create(usuario);
         call.enqueue(new Callback<Usuario>() {
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), "no respuesta", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -117,7 +115,6 @@ public class LogReg extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Usuario> call, Throwable t) {
-                Toast.makeText(getApplicationContext(), "no conexion", Toast.LENGTH_SHORT).show();
             }
         });
     }

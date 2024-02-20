@@ -18,8 +18,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.dam.proyectoandroid.Database.Constants;
 import com.dam.proyectoandroid.Database.Interfaces.ProjectInterface;
+import com.dam.proyectoandroid.Database.Interfaces.UserInterface;
 import com.dam.proyectoandroid.Database.adapters.ProjectAdapter;
 import com.dam.proyectoandroid.Database.model.Proyecto;
+import com.dam.proyectoandroid.Database.model.Usuario;
 import com.dam.proyectoandroid.R;
 
 import java.text.SimpleDateFormat;
@@ -37,6 +39,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     static ProjectInterface projectInterface;
+
+    EditText editTextNombre,editTextDescripcion,editTextFechaFin;
+    String fechaInicio;
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -73,18 +79,19 @@ public class HomeFragment extends Fragment {
         builder.setView(dialogView);
 
         // Referenciar los campos del layout
-        EditText editTextNombre = dialogView.findViewById(R.id.editTextNombre);
-        EditText editTextDescripcion = dialogView.findViewById(R.id.editTextDescripcion);
-        EditText editTextFechaFin = dialogView.findViewById(R.id.editTextFechaFin);
+        editTextNombre = dialogView.findViewById(R.id.editTextNombre);
+        editTextDescripcion = dialogView.findViewById(R.id.editTextDescripcion);
+        editTextFechaFin = dialogView.findViewById(R.id.editTextFechaFin);
 
         // Configurar la fecha de inicio como la fecha actual
         // (Puedes cambiar el formato según tus necesidades)
-        String fechaInicio = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
+        fechaInicio = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
 
         // Configurar los campos según tus necesidades
         builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                addProject(crearProyecto());
                 Toast.makeText(getContext(), fechaInicio, Toast.LENGTH_SHORT).show();
             }
         });
@@ -92,6 +99,7 @@ public class HomeFragment extends Fragment {
         builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+
                 dialog.dismiss();
             }
         });
@@ -99,6 +107,38 @@ public class HomeFragment extends Fragment {
         builder.create().show();
     }
 
+    public Proyecto crearProyecto(){
+        Proyecto proyecto = new Proyecto(editTextNombre.getText().toString()
+                ,true, editTextDescripcion.getText().toString(),
+                fechaInicio, editTextFechaFin.getText().toString());
+        return proyecto;
+    }
+
+    public void addProject(Proyecto proyecto) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Constants.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        projectInterface = retrofit.create(ProjectInterface.class);
+
+        Toast.makeText(getContext(), proyecto.getNombre(), Toast.LENGTH_SHORT).show();
+        Call<Proyecto> call = projectInterface.create(proyecto);
+        call.enqueue(new Callback<Proyecto>() {
+            @Override
+            public void onResponse(Call<Proyecto> call, Response<Proyecto> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(getContext(), "no respuesta", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<Proyecto> call, Throwable t) {
+                Toast.makeText(getContext(), "no conexion", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
     public void getAll() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)
