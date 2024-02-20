@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mis Tareas"
+            android:text="@string/titulo_task"
             android:textColor="@color/verde_oscuro"
             android:textSize="36sp"
             android:textStyle="bold" />
@@ -22,7 +22,7 @@
 
     <!-- RecyclerView debajo del texto "Mis Proyectos" -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/historicEventsRecycler"
+        android:id="@+id/tasksRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/syncTaskContainer"

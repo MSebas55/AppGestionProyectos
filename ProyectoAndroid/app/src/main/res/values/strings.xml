@@ -3,6 +3,8 @@
     <string name="app_name">SyncTask</string>
     <string name="watermark">Made by S.C. y A.E.</string>
     <string name="hello_blank_fragment">Hola</string>
+    <string name="titulo_task">Mis Tareas</string>
+    <string name="titulo_project">Mis Projectos</string>
 
     <string-array name="historic_event_names">
 
