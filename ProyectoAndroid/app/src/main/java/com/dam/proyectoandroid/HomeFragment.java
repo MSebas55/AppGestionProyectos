@@ -85,7 +85,7 @@ public class HomeFragment extends Fragment {
 
         // Configurar la fecha de inicio como la fecha actual
         // (Puedes cambiar el formato según tus necesidades)
-        fechaInicio = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
+        fechaInicio = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
         // Configurar los campos según tus necesidades
         builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
@@ -109,7 +109,7 @@ public class HomeFragment extends Fragment {
 
     public Proyecto crearProyecto(){
         Proyecto proyecto = new Proyecto(editTextNombre.getText().toString()
-                ,true, editTextDescripcion.getText().toString(),
+                ,"En progreso", editTextDescripcion.getText().toString(),
                 fechaInicio, editTextFechaFin.getText().toString());
         return proyecto;
     }
@@ -121,7 +121,7 @@ public class HomeFragment extends Fragment {
                 .build();
         projectInterface = retrofit.create(ProjectInterface.class);
 
-        Toast.makeText(getContext(), proyecto.getNombre(), Toast.LENGTH_SHORT).show();
+
         Call<Proyecto> call = projectInterface.create(proyecto);
         call.enqueue(new Callback<Proyecto>() {
             @Override
@@ -130,6 +130,7 @@ public class HomeFragment extends Fragment {
                     Toast.makeText(getContext(), "no respuesta", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                Toast.makeText(getContext(), proyecto.getNombre(), Toast.LENGTH_SHORT).show();
 
             }
 
