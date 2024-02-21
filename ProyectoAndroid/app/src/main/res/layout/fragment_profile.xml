@@ -52,7 +52,8 @@
             android:id="@+id/buttonOption1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_background"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/verde_guay"
             android:text="Cambiar de contraseña" />
 
         <!-- Botón Editar Perfil -->
@@ -60,15 +61,16 @@
             android:id="@+id/buttonOption2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_background"
             android:text="Eliminar Perfil" />
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/verde_guay"
 
         <!-- Botón Cerrar Sesión -->
         <Button
             android:id="@+id/buttonOption3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_background"
+            android:backgroundTint="@color/verde_guay"
             android:text="Cerrar Sesión"
             android:onClick="onMyButtonClick" />
     </LinearLayout>
