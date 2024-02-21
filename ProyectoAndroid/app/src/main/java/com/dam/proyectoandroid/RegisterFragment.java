@@ -75,6 +75,10 @@ public class RegisterFragment extends Fragment {
         Usuario usuario = new Usuario(inputname.getText().toString(),
                 inputlastname.getText().toString(),
                 inputmail.getText().toString(),inputpassword.getText().toString());
+        inputname.setText("");
+        inputlastname.setText("");
+        inputmail.setText("");
+        inputpassword.setText("");
         return usuario;
     }
 
