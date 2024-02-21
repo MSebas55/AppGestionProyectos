@@ -76,7 +76,6 @@ public class LogReg extends AppCompatActivity {
                     registerbutton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-
                             addUser(crearUser());
                         }
                     });
@@ -111,13 +110,16 @@ public class LogReg extends AppCompatActivity {
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                 if (!response.isSuccessful()) {
+                    Toast.makeText(LogReg.this, "error", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                Toast.makeText(LogReg.this, "Usuario registrado", Toast.LENGTH_SHORT).show();
 
             }
 
             @Override
             public void onFailure(Call<Usuario> call, Throwable t) {
+                Toast.makeText(LogReg.this, "error de conexion", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -133,11 +135,12 @@ public class LogReg extends AppCompatActivity {
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(LogReg.this, "a", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LogReg.this, "error", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 usuario = response.body();
                 if(usuario.getContra().equals(password)){
+                    Toast.makeText(LogReg.this, "Sesion iniciada", Toast.LENGTH_SHORT).show();
                     changeToInicio(v);
                 }
 
@@ -146,6 +149,7 @@ public class LogReg extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Usuario> call, Throwable t) {
+                Toast.makeText(LogReg.this, "error conexion", Toast.LENGTH_SHORT).show();
             }
         });
     }
