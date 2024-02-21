@@ -38,9 +38,9 @@ public class LogReg extends AppCompatActivity {
     TabItem tab1,tab2;
     PageController pagerAdapter;
     UserInterface userInterface;
-
-    Usuario usuario;
+    static Usuario usuario;
     Button registerbutton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -152,5 +152,8 @@ public class LogReg extends AppCompatActivity {
                 Toast.makeText(LogReg.this, "error conexion", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    public static Usuario getUsuario(){
+        return usuario;
     }
 }

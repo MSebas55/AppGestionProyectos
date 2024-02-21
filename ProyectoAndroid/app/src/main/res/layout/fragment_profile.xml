@@ -61,9 +61,9 @@
             android:id="@+id/buttonOption2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Eliminar Perfil" />
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/verde_guay"
-            android:text="Editar Perfil" />
 
         <!-- Botón Cerrar Sesión -->
         <Button

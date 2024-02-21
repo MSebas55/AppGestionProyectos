@@ -1,5 +1,9 @@
 package com.dam.proyectoandroid;
 
+
+import static com.dam.proyectoandroid.LogReg.getUsuario;
+
+
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -17,6 +21,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.dam.proyectoandroid.Database.Constants;
+import com.dam.proyectoandroid.Database.Interfaces.UserInterface;
+import com.dam.proyectoandroid.Database.model.Usuario;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -36,6 +49,8 @@ public class ProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    UserInterface userInterface;
+    Usuario usuario;
     EditText editTextNombre,editTextDescripcion,editTextFechaFin;
     String fechaInicio;
 
@@ -75,20 +90,31 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view  = inflater.inflate(R.layout.fragment_profile, container, false);
-        Button myButton = view.findViewById(R.id.buttonOption3);
+        Button cerrarSesion = view.findViewById(R.id.buttonOption3);
+        Button eliminarCuenta = view.findViewById(R.id.buttonOption2);
+        Button editarCuenta = view.findViewById(R.id.buttonOption1);
 
         // Asignar una función al botón usando un OnClickListener
-        myButton.setOnClickListener(new View.OnClickListener() {
+        cerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Lógica que se ejecutará cuando se haga clic en el botón
                 onMyButtonClick();
             }
         });
-        view.findViewById(R.id.buttonOption1).setOnClickListener(new View.OnClickListener() {
+        eliminarCuenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Lógica que se ejecutará cuando se haga clic en el botón
+                deleteUser(getUsuario().getId());
+            }
+        });
+        editarCuenta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Lógica que se ejecutará cuando se haga clic en el botón
                 showAlertDialog();
+                updateUser(getUsuario().getId());
             }
         });
         return view;
@@ -131,6 +157,31 @@ public class ProfileFragment extends Fragment {
         });
 
         builder.create().show();
+    }
+
+    public void deleteUser(Integer id) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Constants.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        userInterface = retrofit.create(UserInterface.class);
+
+        Call<Boolean> call = userInterface.delete(id);
+        call.enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                if (!response.isSuccessful()) {
+                    return;
+                }
+                Toast.makeText(getContext(), "Usuario eliminado", Toast.LENGTH_SHORT).show();
+
+
+            }
+
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+            }
+        });
     }
 
     public void onMyButtonClick() {
