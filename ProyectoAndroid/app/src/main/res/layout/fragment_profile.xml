@@ -1,83 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment">
+    android:padding="16dp">
 
-    <RelativeLayout
+    <!-- Imagen de perfil -->
+    <ImageView
+        android:id="@+id/imageViewProfile"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_persona"
+        android:scaleType="centerCrop" />
+
+    <!-- Nombre de usuario -->
+    <TextView
+        android:id="@+id/textViewUsername"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewProfile"
+        android:layout_marginTop="16dp"
+        android:text="Pepito"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center" />
 
-        <!-- Imagen -->
-        <ImageView
-            android:id="@+id/imageViewProfile"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginTop="60dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginBottom="60dp"
-            android:layout_weight="1"
-            android:contentDescription="Imagen de perfil"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_baseline_person_24" />
+    <!-- Correo electrónico -->
+    <TextView
+        android:id="@+id/textViewMail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewUsername"
+        android:layout_marginTop="8dp"
+        android:text="Pepito@gmail.com"
+        android:textSize="18sp"
+        android:gravity="center" />
 
-        <!-- Nombre de usuario -->
-        <TextView
-            android:id="@+id/textViewUsername"
+    <!-- Botones de opciones -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewMail"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp">
+
+        <!-- Botón Cambiar Contraseña -->
+        <Button
+            android:id="@+id/buttonOption1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imageViewProfile"
-            android:padding="16dp"
-            android:text="Juan Gómez"
-            android:textColor="#FFFF"
-            android:gravity="center"
-            android:textSize="30sp"
-            android:textStyle="bold"/>
-        <TextView
-            android:id="@+id/textViewMail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewUsername"
-            android:padding="16dp"
-            android:text="juanito@gmail.com"
-            android:textColor="#FFFF"
-            android:gravity="center"
-            android:textSize="30sp"
-            android:textStyle="bold"/>
-            <Button
-                android:id="@+id/buttonOption1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_below="@+id/textViewMail"
-                android:backgroundTint="#e0e0e0"
-                android:textColor="@color/md_theme_dark_shadow"
-                android:text="Cambiar Contraseña" />
+            android:background="@drawable/button_background"
+            android:text="Cambiar de contraseña" />
 
+        <!-- Botón Editar Perfil -->
         <Button
             android:id="@+id/buttonOption2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_below="@+id/buttonOption1"
-            android:backgroundTint="#e0e0e0"
-            android:textColor="@color/md_theme_dark_shadow"
+            android:background="@drawable/button_background"
             android:text="Editar Perfil" />
+
+        <!-- Botón Cerrar Sesión -->
         <Button
             android:id="@+id/buttonOption3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_below="@+id/buttonOption2"
-            android:backgroundTint="#e0e0e0"
-            android:textColor="@color/md_theme_dark_shadow"
+            android:background="@drawable/button_background"
             android:text="Cerrar Sesión"
-            android:onClick="onMyButtonClick"/>
+            android:onClick="onMyButtonClick" />
+    </LinearLayout>
 
-    </RelativeLayout>
-
-
-</FrameLayout>
+</RelativeLayout>
