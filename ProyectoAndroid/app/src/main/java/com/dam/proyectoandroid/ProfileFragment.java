@@ -2,6 +2,7 @@ package com.dam.proyectoandroid;
 
 
 import static com.dam.proyectoandroid.LogReg.getUsuario;
+import static com.dam.proyectoandroid.LogReg.usuario;
 
 
 import android.annotation.SuppressLint;
@@ -50,23 +51,10 @@ public class ProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     UserInterface userInterface;
-    Usuario usuario;
-    EditText editTextNombre,editTextDescripcion,editTextFechaFin;
-    String fechaInicio;
+    EditText editTextNombre,editTextApellido,editTextEmail,editTextContra;
+    TextView textName, textEmail;
 
-    public ProfileFragment() {
-        // Required empty public constructor
-    }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SettingsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static ProfileFragment newInstance(String param1, String param2) {
         ProfileFragment fragment = new ProfileFragment();
         Bundle args = new Bundle();
@@ -93,6 +81,10 @@ public class ProfileFragment extends Fragment {
         Button cerrarSesion = view.findViewById(R.id.buttonOption3);
         Button eliminarCuenta = view.findViewById(R.id.buttonOption2);
         Button editarCuenta = view.findViewById(R.id.buttonOption1);
+        textName = view.findViewById(R.id.textViewUsername);
+        textEmail = view.findViewById(R.id.textViewMail);
+        textName.setText(usuario.getNombre() + " " + usuario.getApellido());
+        textEmail.setText(usuario.getEmail());
 
         // Asignar una función al botón usando un OnClickListener
         cerrarSesion.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +106,7 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 // Lógica que se ejecutará cuando se haga clic en el botón
                 showAlertDialog();
-                updateUser(getUsuario().getId());
+
             }
         });
         return view;
@@ -128,23 +120,31 @@ public class ProfileFragment extends Fragment {
 
         // Inflar el layout personalizado
         View dialogView = getLayoutInflater().inflate(R.layout.alertdialog_editprof, null);
+
         builder.setView(dialogView);
 
-        // Referenciar los campos del layout
-        editTextNombre = dialogView.findViewById(R.id.editTextNombre);
-        editTextDescripcion = dialogView.findViewById(R.id.editTextDescripcion);
-        editTextFechaFin = dialogView.findViewById(R.id.editTextFechaFin);
 
-        // Configurar la fecha de inicio como la fecha actual
-        // (Puedes cambiar el formato según tus necesidades)
-        fechaInicio = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+        // Referenciar los campos del layout
+
+        editTextNombre = dialogView.findViewById(R.id.inputname);
+        editTextApellido = dialogView.findViewById(R.id.inputlastname);
+        editTextEmail = dialogView.findViewById(R.id.inputemail);
+        editTextContra = dialogView.findViewById(R.id.inputpassword);
+        editTextNombre.setText(usuario.getNombre());
+        editTextApellido.setText(usuario.getApellido());
+        editTextEmail.setText(usuario.getEmail());
+        editTextContra.setText(usuario.getContra());
 
         // Configurar los campos según tus necesidades
         builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
-                Toast.makeText(getContext(), editTextNombre.toString(), Toast.LENGTH_SHORT).show();
+                usuario = getUsuario();
+                usuario.setNombre(editTextNombre.getText().toString());
+                usuario.setApellido(editTextApellido.getText().toString());
+                usuario.setEmail(editTextEmail.getText().toString());
+                usuario.setContra(editTextContra.getText().toString());
+                updateUser(usuario,usuario.getId());
             }
         });
 
@@ -157,6 +157,31 @@ public class ProfileFragment extends Fragment {
         });
 
         builder.create().show();
+    }
+
+    public void updateUser(Usuario usuario,Integer id) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(Constants.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        userInterface = retrofit.create(UserInterface.class);
+
+        Call<Usuario> call = userInterface.update(usuario);
+        call.enqueue(new Callback<Usuario>() {
+            @Override
+            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                if (!response.isSuccessful()) {
+                    return;
+                }
+                Toast.makeText(getContext(), "Usuario actualizado", Toast.LENGTH_SHORT).show();
+
+
+            }
+
+            @Override
+            public void onFailure(Call<Usuario> call, Throwable t) {
+            }
+        });
     }
 
     public void deleteUser(Integer id) {
