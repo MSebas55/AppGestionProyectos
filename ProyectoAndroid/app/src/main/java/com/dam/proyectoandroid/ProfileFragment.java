@@ -1,16 +1,25 @@
 package com.dam.proyectoandroid;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +36,8 @@ public class ProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    EditText editTextNombre,editTextDescripcion,editTextFechaFin;
+    String fechaInicio;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -74,7 +85,52 @@ public class ProfileFragment extends Fragment {
                 onMyButtonClick();
             }
         });
+        view.findViewById(R.id.buttonOption1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAlertDialog();
+            }
+        });
         return view;
+    }
+    @SuppressLint("MissingInflatedId")
+    private void showAlertDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+
+        // Establecer el título del AlertDialog y su color
+        builder.setTitle(Html.fromHtml("<font color='#0F3800'>Editar Perfil</font>"));
+
+        // Inflar el layout personalizado
+        View dialogView = getLayoutInflater().inflate(R.layout.alertdialog_editprof, null);
+        builder.setView(dialogView);
+
+        // Referenciar los campos del layout
+        editTextNombre = dialogView.findViewById(R.id.editTextNombre);
+        editTextDescripcion = dialogView.findViewById(R.id.editTextDescripcion);
+        editTextFechaFin = dialogView.findViewById(R.id.editTextFechaFin);
+
+        // Configurar la fecha de inicio como la fecha actual
+        // (Puedes cambiar el formato según tus necesidades)
+        fechaInicio = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+
+        // Configurar los campos según tus necesidades
+        builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                Toast.makeText(getContext(), editTextNombre.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.dismiss();
+            }
+        });
+
+        builder.create().show();
     }
 
     public void onMyButtonClick() {

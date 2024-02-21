@@ -6,8 +6,71 @@
     android:orientation="vertical"
     tools:context=".LoginFragment"
     android:gravity="center"
-    android:paddingLeft="40dp"
-    android:paddingRight="40dp">
+    android:paddingHorizontal="20dp">
+
+
+    <TextView
+        android:id="@+id/textonombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuario:"
+        android:textColor="@color/verde_guay"
+        android:textSize="18sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/userInputLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rounded_all_corners"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/inputname"
+            android:layout_width="match_parent"
+            android:background="@drawable/rounded_all_corners"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            android:drawableStart="@drawable/ic_baseline_person_24"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Apellido -->
+    <TextView
+        android:id="@+id/textoapellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Apellido:"
+        android:textSize="18sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="@color/verde_guay">
+    </TextView>
+
+    <!-- TextInputLayout para el apellido -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lastNameInputLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/rounded_all_corners"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/inputlastname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_all_corners"
+            android:hint="Apellido"
+            android:inputType="textEmailAddress"
+            android:drawableStart="@drawable/ic_correo"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Correo electrónico -->
     <TextView
@@ -51,8 +114,7 @@
         android:textColor="@color/verde_guay"
         android:textSize="18sp"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginEnd="10dp"/>
 
     <!-- TextInputLayout para la contraseña -->
     <com.google.android.material.textfield.TextInputLayout
@@ -61,8 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:background="@drawable/rounded_all_corners"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp">
+        android:layout_marginEnd="10dp">
 
         <EditText
             android:id="@+id/inputpassword"
