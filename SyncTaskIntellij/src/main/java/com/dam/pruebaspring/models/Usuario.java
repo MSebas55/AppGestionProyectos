@@ -24,8 +24,9 @@ public class Usuario {
 
     @Column(name = "apellido")
     private String apellido;
-    @Column(name = "contra")
-    private String contra;
     @Column(name = "email")
     private String email;
+
+    @Column(name = "contra")
+    private String contra;
 }

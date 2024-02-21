@@ -64,7 +64,7 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view  = inflater.inflate(R.layout.fragment_profile, container, false);
-        Button myButton = view.findViewById(R.id.buttonOption2);
+        Button myButton = view.findViewById(R.id.buttonOption3);
 
         // Asignar una función al botón usando un OnClickListener
         myButton.setOnClickListener(new View.OnClickListener() {

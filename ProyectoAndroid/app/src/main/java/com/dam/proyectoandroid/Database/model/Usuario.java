@@ -6,17 +6,17 @@ public class Usuario {
     private Integer id;
     private String nombre;
     private String apellido;
-    private String contra;
     private String email;
+    private String contra;
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellido, String contra, String email) {
+    public Usuario(String nombre, String apellido, String email,String contra) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.contra = contra;
         this.email = email;
+        this.contra = contra;
     }
 
     public Integer getId() {
