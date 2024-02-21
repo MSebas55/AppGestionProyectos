@@ -13,7 +13,6 @@ import com.dam.proyectoandroid.Database.model.Tarea;
 import com.dam.proyectoandroid.ProjectActivity;
 import com.dam.proyectoandroid.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder> {
@@ -31,7 +30,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     @NonNull
     @Override
     public TaskViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cv_row, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cv_task, parent, false);
         return new TaskViewHolder(view);
     }
 
@@ -67,7 +66,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
 
         public TaskViewHolder(@NonNull View itemView) {
             super(itemView);
-            nameText = itemView.findViewById(R.id.tvEventName);
+            nameText = itemView.findViewById(R.id.tvNombreTarea);
             fechaFinText = itemView.findViewById(R.id.tvEventFechaFin);
         }
     }

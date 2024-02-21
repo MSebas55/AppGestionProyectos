@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dam.proyectoandroid.Database.model.Proyecto;
-import com.dam.proyectoandroid.Database.model.Tarea;
 import com.dam.proyectoandroid.ProjectActivity;
 import com.dam.proyectoandroid.R;
 
@@ -21,7 +20,6 @@ import java.util.List;
 public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder> {
 
     private List<Proyecto> proyectos;
-    private ArrayList<String> textColors;
     private Context context;
 
     // Constructor
@@ -35,7 +33,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ProjectV
     @NonNull
     @Override
     public ProjectViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cv_row, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cv_project, parent, false);
         return new ProjectViewHolder(view);
     }
 
@@ -44,7 +42,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ProjectV
     public void onBindViewHolder(@NonNull ProjectViewHolder holder, int position) {
         Proyecto proyecto = proyectos.get(position);
         holder.nameText.setText(proyecto.getNombre());
-        holder.fechaFinText.setText("Fecha máxima de entrega: " + proyecto.getFechafin());
+        holder.fechaFinText.setText("Fecha de entrega: " + proyecto.getFechafin());
         // Aquí puedes establecer cualquier otro dato que necesites
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
