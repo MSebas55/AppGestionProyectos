@@ -10,6 +10,7 @@ public class Usuario {
     private String contra;
 
     public Usuario() {
+
     }
 
     public Usuario(String nombre, String apellido, String email,String contra) {

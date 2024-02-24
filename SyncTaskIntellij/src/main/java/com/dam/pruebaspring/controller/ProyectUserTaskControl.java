@@ -17,8 +17,8 @@ public class ProyectUserTaskControl {
     public List<ProyectUserTask> getAllProyectUserTasks() {
         return proyectUserTaskService.getAllProyectUserTasks();
     }
-    /*@GetMapping("/id/{id}")
-    public ProyectUserTask getProyectUserTaskById(@PathVariable Integer id){
+    @GetMapping("/id/{id}")
+    /*public ProyectUserTask getProyectUserTaskById(@PathVariable Integer id){
         return proyectUserTaskService.getProyectUserTaskById(id);
     }*/
 

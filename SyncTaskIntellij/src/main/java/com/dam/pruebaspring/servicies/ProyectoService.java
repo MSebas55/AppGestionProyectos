@@ -27,6 +27,9 @@ public class ProyectoService {
     public Proyecto getProyectoByNombre(String nombre) {
         return proyectoRepository.findByNombre(nombre);
     }
+    public List<Proyecto> getProyectoByUser(Integer id) {
+        return proyectoRepository.search(id);
+    }
 
 
     public Boolean deleteProyecto(Integer id) {
