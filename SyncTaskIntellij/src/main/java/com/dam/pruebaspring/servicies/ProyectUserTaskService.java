@@ -3,6 +3,7 @@ package com.dam.pruebaspring.servicies;
 import com.dam.pruebaspring.models.ProyectUserTask;
 import com.dam.pruebaspring.repositories.ProyectUserTaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,9 +16,6 @@ public class ProyectUserTaskService {
     public List<ProyectUserTask> getAllProyectUserTasks() {
         return proyectUserTaskRepository.findAll();
     }
-   /* public ProyectUserTask getProyectUserTaskById(Integer id){
-        return proyectUserTaskRepository.findById(id).get();
-    }*/
 
     public ProyectUserTask saveProyectUserTask(ProyectUserTask proyectUserTask) {
         return proyectUserTaskRepository.save(proyectUserTask);

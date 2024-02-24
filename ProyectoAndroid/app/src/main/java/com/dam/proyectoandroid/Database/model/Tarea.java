@@ -13,8 +13,7 @@ public class Tarea {
     public Tarea() {
     }
 
-    public Tarea(Integer id, String nombre, String estado, String descripcion, String fechaini, String fechafin) {
-        this.id=id;
+    public Tarea(String nombre, String estado, String descripcion, String fechaini, String fechafin) {
         this.nombre=nombre;
         this.estado=estado;
         this.descripcion=descripcion;
