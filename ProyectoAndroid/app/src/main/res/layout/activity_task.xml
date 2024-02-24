@@ -19,7 +19,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NombreProyecto"
+                android:text="NombreTarea"
                 android:textColor="@color/verde_oscuro"
                 android:textSize="36sp"
                 android:textStyle="bold"
@@ -58,13 +58,21 @@
             android:text="DESCRIPCIÓN" />
 
         <!-- RecyclerView debajo del texto "Mis Proyectos" -->
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/descripcion"
+            android:text="Estado de la tarea" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/tasksRecycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/descripcion"
+            android:layout_below="@id/checkBox"
             android:layout_marginTop="8dp"
             />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -77,10 +85,10 @@
                 android:layout_margin="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
-                android:contentDescription="Eliminar Proyecto"
-                android:text="Eliminar Proyecto"
+                android:contentDescription="Añadir usuario"
+                android:text="Añadir Usuario"
                 app:backgroundTint="@color/verde_guay"
-                app:icon="@drawable/ic_delete"
+                app:icon="@drawable/ic_add"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
@@ -91,12 +99,13 @@
                 android:layout_margin="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
+                android:contentDescription="Eliminar Tarea"
+                android:text="Eliminar Tarea"
                 app:backgroundTint="@color/verde_guay"
-                app:icon="@drawable/ic_add"
-                android:contentDescription="Añadir tarea"
-                android:text="Añadir tarea"
+                app:icon="@drawable/ic_delete"
                 app:layout_constraintBottom_toTopOf="@id/extended_fab"
                 app:layout_constraintEnd_toEndOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
