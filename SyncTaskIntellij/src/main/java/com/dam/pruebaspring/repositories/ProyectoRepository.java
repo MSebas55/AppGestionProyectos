@@ -15,7 +15,6 @@ public interface ProyectoRepository extends JpaRepository<Proyecto, Integer> {
     Proyecto findByNombre(String nombre);
 
 
-    /*List<Proyecto> findProyectsOfUsers(Integer id);*/
     @Query(value = "SELECT proyectos.* " +
             "FROM proyectos " +
             "JOIN proyectos_usuarios_tareas ON proyectos.id = proyectos_usuarios_tareas.idProyecto " +

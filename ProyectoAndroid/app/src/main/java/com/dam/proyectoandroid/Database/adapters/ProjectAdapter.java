@@ -21,6 +21,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ProjectV
 
     private List<Proyecto> proyectos;
     private Context context;
+    public static Proyecto proyectoElegido;
 
     // Constructor
     public ProjectAdapter(Context context, List<Proyecto> proyectos) {
@@ -49,6 +50,7 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ProjectV
             @Override
             public void onClick(View v) {
                 // Aquí puedes iniciar la actividad "Proyecto"
+                proyectoElegido = proyecto;
                 Intent intent = new Intent(context, ProjectActivity.class);
                 context.startActivity(intent);
             }

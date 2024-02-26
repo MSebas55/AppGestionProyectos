@@ -99,6 +99,7 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 // Lógica que se ejecutará cuando se haga clic en el botón
                 deleteUser(getUsuario().getId());
+                onMyButtonClick();
             }
         });
         editarCuenta.setOnClickListener(new View.OnClickListener() {
@@ -145,6 +146,9 @@ public class ProfileFragment extends Fragment {
                 usuario.setEmail(editTextEmail.getText().toString());
                 usuario.setContra(editTextContra.getText().toString());
                 updateUser(usuario,usuario.getId());
+
+                Intent nIntent = new Intent(getActivity(), Inicio.class);
+                startActivity(nIntent);
             }
         });
 

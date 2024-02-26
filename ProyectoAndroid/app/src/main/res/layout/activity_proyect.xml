@@ -17,6 +17,7 @@
             android:background="@drawable/rounded_corners">
 
             <TextView
+                android:id="@+id/nombreproyecto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="NombreProyecto"
@@ -71,7 +72,7 @@
             app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/extended_fab"
+                android:id="@+id/deleteProyecto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -79,13 +80,13 @@
                 android:layout_marginBottom="16dp"
                 android:contentDescription="Eliminar Proyecto"
                 android:text="Eliminar Proyecto"
-                app:backgroundTint="@color/verde_guay"
+                app:backgroundTint="@color/design_default_color_error"
                 app:icon="@drawable/ic_delete"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/extended_fab2"
+                android:id="@+id/addTarea"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -95,7 +96,7 @@
                 app:icon="@drawable/ic_add"
                 android:contentDescription="Añadir tarea"
                 android:text="Añadir tarea"
-                app:layout_constraintBottom_toTopOf="@id/extended_fab"
+                app:layout_constraintBottom_toTopOf="@id/deleteProyecto"
                 app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

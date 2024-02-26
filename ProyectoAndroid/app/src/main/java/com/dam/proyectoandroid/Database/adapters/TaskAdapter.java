@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.dam.proyectoandroid.Database.model.Tarea;
 import com.dam.proyectoandroid.ProjectActivity;
 import com.dam.proyectoandroid.R;
+import com.dam.proyectoandroid.TaskActivity;
 
 import java.util.List;
 
@@ -19,6 +20,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
 
     private List<Tarea> tareas;
     private Context context;
+
+    public static Tarea tarea;
 
     // Constructor
     public TaskAdapter(Context context, List<Tarea> tareas) {
@@ -37,9 +40,11 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     // Método llamado para rellenar los datos en una vista de elemento
     @Override
     public void onBindViewHolder(@NonNull TaskViewHolder holder, int position) {
-        Tarea tarea = tareas.get(position);
+        tarea = tareas.get(position);
         holder.nameText.setText(tarea.getNombre());
-        holder.fechaFinText.setText("Fecha máxima de entrega: " + tarea.getFechafin());
+        holder.fechaFinText.setText("Fecha de entrega: " + tarea.getFechafin());
+        holder.estadoText.setText(tarea.getEstado());
+
         // Aquí puedes establecer cualquier otro dato que necesites
 
         // Establecer el OnClickListener para el itemView
@@ -47,7 +52,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
             @Override
             public void onClick(View v) {
                 // Aquí puedes iniciar la actividad "Proyecto"
-                Intent intent = new Intent(context, ProjectActivity.class);
+                Intent intent = new Intent(context, TaskActivity.class);
                 context.startActivity(intent);
             }
         });
@@ -62,12 +67,13 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
     // Clase interna para mantener las referencias de las vistas de cada elemento del RecyclerView
     public static class TaskViewHolder extends RecyclerView.ViewHolder {
         TextView nameText;
-        TextView fechaFinText;
+        TextView fechaFinText,estadoText;
 
         public TaskViewHolder(@NonNull View itemView) {
             super(itemView);
             nameText = itemView.findViewById(R.id.tvNombreTarea);
             fechaFinText = itemView.findViewById(R.id.tvEventFechaFin);
+            estadoText = itemView.findViewById(R.id.estado);
         }
     }
 }

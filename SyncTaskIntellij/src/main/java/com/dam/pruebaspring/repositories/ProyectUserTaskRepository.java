@@ -9,5 +9,4 @@ import java.util.List;
 
 @Repository
 public interface ProyectUserTaskRepository extends JpaRepository<ProyectUserTask, ProyectUserTaskPK> {
-
 }

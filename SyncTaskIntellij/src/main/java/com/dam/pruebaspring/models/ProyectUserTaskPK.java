@@ -13,10 +13,12 @@ import lombok.NoArgsConstructor;
 @Builder
 @Embeddable
 public class ProyectUserTaskPK {
-    @Column(name = "idProyecto")
-    private Integer idProyecto;
-    @Column(name = "idTarea")
-    private Integer idTarea;
-    @Column(name = "idUsuario")
+
+    @Column(name = "idusuario")
     private Integer idUsuario;
+    @Column(name = "idtarea")
+    private Integer idTarea;
+    @Column(name = "idproyecto")
+    private Integer idProyecto;
+
 }

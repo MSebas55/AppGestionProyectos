@@ -38,6 +38,8 @@
             android:background="@drawable/rounded_all_corners"
             android:hint="Correo electrónico"
             android:inputType="textEmailAddress"
+            android:textColor="#FFF"
+            android:textColorHint="#FFF"
             android:drawableStart="@drawable/ic_correo"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -71,6 +73,8 @@
             android:layout_height="wrap_content"
             android:hint="Contraseña"
             android:inputType="textPassword"
+            android:textColor="#FFF"
+            android:textColorHint="#FFF"
             android:drawableStart="@drawable/ic_llave"/>
 
     </com.google.android.material.textfield.TextInputLayout>

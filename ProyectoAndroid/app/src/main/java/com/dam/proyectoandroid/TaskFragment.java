@@ -2,6 +2,7 @@ package com.dam.proyectoandroid;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -53,12 +54,6 @@ public class TaskFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.tasksRecycler);
         getAll();
-        view.findViewById(R.id.floating_action_button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showAlertDialog();
-            }
-        });
         return view;
     }
 
@@ -85,7 +80,6 @@ public class TaskFragment extends Fragment {
         builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getContext(), fechaInicio, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -121,6 +115,7 @@ public class TaskFragment extends Fragment {
                 TaskAdapter tasksAdapter = new TaskAdapter(getContext(),tareas);
                 recyclerView.setAdapter(tasksAdapter);
                 recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+
 
             }
 

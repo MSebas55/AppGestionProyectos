@@ -35,6 +35,8 @@
             android:background="@drawable/rounded_all_corners"
             android:layout_height="wrap_content"
             android:hint="Nombre"
+            android:textColor="#FFF"
+            android:textColorHint="#FFF"
             android:drawableStart="@drawable/ic_baseline_person_24"/>
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -67,8 +69,10 @@
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_all_corners"
             android:hint="Apellido"
+            android:textColor="#FFF"
+            android:textColorHint="#FFF"
             android:inputType="textEmailAddress"
-            android:drawableStart="@drawable/ic_correo"/>
+            android:drawableStart="@drawable/ic_persona"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,6 +104,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_all_corners"
             android:hint="Correo electrónico"
+            android:textColor="#FFF"
+            android:textColorHint="#FFF"
             android:inputType="textEmailAddress"
             android:drawableStart="@drawable/ic_correo"/>
 
@@ -131,6 +137,7 @@
             android:background="@drawable/rounded_all_corners"
             android:layout_height="wrap_content"
             android:hint="Contraseña"
+            android:textColor="#FFF"
             android:inputType="textPassword"
             android:drawableStart="@drawable/ic_llave"/>
 

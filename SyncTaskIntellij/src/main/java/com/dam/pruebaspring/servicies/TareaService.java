@@ -19,6 +19,10 @@ public class TareaService {
     public Tarea getTareaById(Integer id) {
         return tareaRepository.findById(id).get();
     }
+    public List<Tarea> getTareaByDay(String time){
+        List<Tarea> tareas = tareaRepository.getTareaByDay(time);
+        return tareas;
+    }
 
     public Tarea saveTarea(Tarea tarea) {
         return tareaRepository.save(tarea);
@@ -28,6 +32,5 @@ public class TareaService {
         tareaRepository.deleteById(id);
 
         return tareaRepository.findById(id).isEmpty();
-    }
+    }}
 
-}

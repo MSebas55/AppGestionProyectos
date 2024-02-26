@@ -4,7 +4,7 @@ import static com.dam.proyectoandroid.LogReg.usuario;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.os.Build;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
@@ -23,13 +23,11 @@ import com.dam.proyectoandroid.Database.Constants;
 import com.dam.proyectoandroid.Database.Interfaces.ProjectInterface;
 import com.dam.proyectoandroid.Database.Interfaces.ProjectTaskUserInterface;
 import com.dam.proyectoandroid.Database.Interfaces.TaskInterface;
-import com.dam.proyectoandroid.Database.Interfaces.UserInterface;
 import com.dam.proyectoandroid.Database.adapters.ProjectAdapter;
 import com.dam.proyectoandroid.Database.model.Proyecto;
 import com.dam.proyectoandroid.Database.model.ProyectoTareaUsuario;
+import com.dam.proyectoandroid.Database.model.ProyectoTareaUsuarioPK;
 import com.dam.proyectoandroid.Database.model.Tarea;
-import com.dam.proyectoandroid.Database.model.Usuario;
-import com.dam.proyectoandroid.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -53,9 +51,10 @@ public class HomeFragment extends Fragment {
     String fechaInicio;
     AlertDialog.Builder builder;
     View dialogView;
-    Proyecto proyecto;
+    public static Proyecto proyecto;
     Tarea tarea;
     ProyectoTareaUsuario proyectoTareaUsuario;
+    ProyectoTareaUsuarioPK proyectoTareaUsuarioPK;
 
 
     public HomeFragment() {
@@ -105,8 +104,10 @@ public class HomeFragment extends Fragment {
         builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                crearProyecto();
+                addProject(proyecto);
                 showAlertDialogTarea();
-                proyecto = crearProyecto();
+
                 Toast.makeText(getContext(), "Crea minimo una tarea", Toast.LENGTH_SHORT).show();
             }
         });
@@ -114,7 +115,7 @@ public class HomeFragment extends Fragment {
 
         builder.create().show();
     }
-    private void showAlertDialogTarea() {
+    public void showAlertDialogTarea() {
         builder = new AlertDialog.Builder(requireContext());
 
         // Establecer el título del AlertDialog y su color
@@ -131,19 +132,19 @@ public class HomeFragment extends Fragment {
 
         // Configurar la fecha de inicio como la fecha actual
         // (Puedes cambiar el formato según tus necesidades)
-        fechaInicio = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
 
         // Configurar los campos según tus necesidades
         builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                tarea = crearTarea();
+                crearTarea();
                 addTask(tarea);
-                addProject(proyecto);
-                addProjectTaskUser(crearProyectoTareaUsuario());
+                crearProyectoTareaUsuario();
+                addProjectTaskUser(proyectoTareaUsuario);
+                Intent intent = new Intent(getContext(),Inicio.class);
+                startActivity(intent);
 
 
-                Toast.makeText(getContext(), fechaInicio, Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -158,20 +159,22 @@ public class HomeFragment extends Fragment {
     }
 
     public Proyecto crearProyecto(){
-        Proyecto proyecto = new Proyecto(editTextNombre.getText().toString()
+        proyecto = new Proyecto(editTextNombre.getText().toString()
                 ,"En progreso", editTextDescripcion.getText().toString(),
                 fechaInicio, editTextFechaFin.getText().toString());
         return proyecto;
     }
     public Tarea crearTarea(){
-        Tarea tarea = new Tarea(editTextNombre.getText().toString()
+        tarea = new Tarea(editTextNombre.getText().toString()
                 ,"En progreso", editTextDescripcion.getText().toString(),
                 fechaInicio, editTextFechaFin.getText().toString());
         return tarea;
     }
     public ProyectoTareaUsuario crearProyectoTareaUsuario(){
-        ProyectoTareaUsuario proyectoTareaUsuario =
-                new ProyectoTareaUsuario(usuario.getId(),tarea.getId(),proyecto.getId());
+        proyectoTareaUsuarioPK =
+                new ProyectoTareaUsuarioPK(usuario.getId(),tarea.getId(),proyecto.getId());
+        proyectoTareaUsuario =
+                new ProyectoTareaUsuario(proyectoTareaUsuarioPK);
         return proyectoTareaUsuario;
     }
 
@@ -193,7 +196,6 @@ public class HomeFragment extends Fragment {
                 }
                 proyecto = response.body();
                 Toast.makeText(getContext(), "Proyecto creado", Toast.LENGTH_SHORT).show();
-
             }
 
             @Override
@@ -242,7 +244,6 @@ public class HomeFragment extends Fragment {
             @Override
             public void onResponse(Call<ProyectoTareaUsuario> call, Response<ProyectoTareaUsuario> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(getContext(), "no respuesta", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 Toast.makeText(getContext(), "Conexion creada", Toast.LENGTH_SHORT).show();
@@ -262,7 +263,7 @@ public class HomeFragment extends Fragment {
                 .build();
         projectInterface = retrofit.create(ProjectInterface.class);
 
-        Call<List<Proyecto>> call = projectInterface.getUserProjects(usuario.getId());
+        Call<List<Proyecto>> call = projectInterface.getAll();
         call.enqueue(new Callback<List<Proyecto>>() {
             @Override
             public void onResponse(Call<List<Proyecto>> call, Response<List<Proyecto>> response) {

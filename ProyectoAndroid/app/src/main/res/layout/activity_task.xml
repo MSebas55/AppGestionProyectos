@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProjectActivity">
+    tools:context=".TaskActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -17,6 +17,7 @@
             android:background="@drawable/rounded_corners">
 
             <TextView
+                android:id="@+id/nobreTarea"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="NombreTarea"
@@ -66,7 +67,7 @@
             android:text="Estado de la tarea" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/tasksRecycler"
+            android:id="@+id/usersRecycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/checkBox"
@@ -79,7 +80,21 @@
             app:layout_constraintEnd_toEndOf="parent">
 
             <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/extended_fab"
+                android:id="@+id/deleteTarea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Eliminar Tarea"
+                android:text="Eliminar Tarea"
+                app:backgroundTint="@color/design_default_color_error"
+                app:icon="@drawable/ic_delete"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/addUsuario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -89,22 +104,10 @@
                 android:text="Añadir Usuario"
                 app:backgroundTint="@color/verde_guay"
                 app:icon="@drawable/ic_add"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintBottom_toTopOf="@id/deleteTarea"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
-            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/extended_fab2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:contentDescription="Eliminar Tarea"
-                android:text="Eliminar Tarea"
-                app:backgroundTint="@color/verde_guay"
-                app:icon="@drawable/ic_delete"
-                app:layout_constraintBottom_toTopOf="@id/extended_fab"
-                app:layout_constraintEnd_toEndOf="parent" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

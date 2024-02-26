@@ -19,24 +19,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.75" />
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.75"
-            android:background="#FFFFFF"/>
-        <ImageView
-            android:id="@+id/imagen"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/icono_login"
-            android:scaleType="fitXY"/>
-
-        <!-- 1 opaco - 0 transparente -->
-    </RelativeLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/h1"

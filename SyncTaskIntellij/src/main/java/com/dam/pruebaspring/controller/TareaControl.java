@@ -1,8 +1,11 @@
 package com.dam.pruebaspring.controller;
 
+import com.dam.pruebaspring.models.Proyecto;
 import com.dam.pruebaspring.models.Tarea;
 import com.dam.pruebaspring.servicies.TareaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
@@ -25,9 +28,22 @@ public class TareaControl {
         return tareaService.getTareaById(id);
     }
 
+    @GetMapping("/getTareaByDay/{time}")
+    /*public ResponseEntity<?> getTareaByDay(@PathVariable String time){
+        return ResponseEntity.status(HttpStatus.OK).body(tareaService.getTareaByDay(time));
+    }*/
+    public List<Tarea> getTareaByDay(@PathVariable String time) {
+        return tareaService.getTareaByDay(time);
+    }
+
     @PostMapping("/save")
     public Tarea saveTarea(@RequestBody Tarea tarea) {
 
+        return tareaService.saveTarea(tarea);
+    }
+
+    @PutMapping("/update")
+    public Tarea updateTarea(@RequestBody Tarea tarea) {
         return tareaService.saveTarea(tarea);
     }
 

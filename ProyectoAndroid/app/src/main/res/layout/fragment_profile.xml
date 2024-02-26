@@ -47,23 +47,14 @@
         android:orientation="vertical"
         android:layout_marginTop="32dp">
 
-        <!-- Botón Cambiar Contraseña -->
+        <!-- Botón Editar Perfil -->
         <Button
             android:id="@+id/buttonOption1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:backgroundTint="@color/verde_guay"
-            android:text="Cambiar de contraseña" />
-
-        <!-- Botón Editar Perfil -->
-        <Button
-            android:id="@+id/buttonOption2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Eliminar Perfil"
-            android:layout_marginBottom="8dp"
-            android:backgroundTint="@color/verde_guay"/>
+            android:text="Editar perfil" />
 
         <!-- Botón Cerrar Sesión -->
         <Button
@@ -73,6 +64,14 @@
             android:backgroundTint="@color/verde_guay"
             android:text="Cerrar Sesión"
             android:onClick="onMyButtonClick" />
+        <!-- Botón Eliminar Perfil -->
+        <Button
+            android:id="@+id/buttonOption2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Eliminar Perfil"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/design_default_color_error"/>
     </LinearLayout>
 
 </RelativeLayout>

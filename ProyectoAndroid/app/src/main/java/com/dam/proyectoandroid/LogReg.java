@@ -55,6 +55,15 @@ public class LogReg extends AppCompatActivity {
         registerbutton = findViewById(R.id.registerbutton);
         pagerAdapter = new PageController(getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(pagerAdapter);
+        registerbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                List<String> campos = getCampos();
+                loginUser(campos.get(0), campos.get(1),v);
+
+            }
+        });
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
